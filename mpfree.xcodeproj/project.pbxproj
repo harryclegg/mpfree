@@ -13,7 +13,7 @@
 		4A2AF5D723889BC4000A7EB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2AF5D523889BC4000A7EB6 /* Main.storyboard */; };
 		4A2AF5E323889BC4000A7EB6 /* mpfreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AF5E223889BC4000A7EB6 /* mpfreeTests.swift */; };
 		4A2AF5EE23889BC4000A7EB6 /* mpfreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AF5ED23889BC4000A7EB6 /* mpfreeUITests.swift */; };
-		4AD0F1322388AF1200F9CB75 /* iTunesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0F1312388AF1200F9CB75 /* iTunesParser.swift */; };
+		4AD0F1322388AF1200F9CB75 /* ITParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0F1312388AF1200F9CB75 /* ITParse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		4A2AF5E923889BC4000A7EB6 /* mpfreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mpfreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A2AF5ED23889BC4000A7EB6 /* mpfreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mpfreeUITests.swift; sourceTree = "<group>"; };
 		4A2AF5EF23889BC4000A7EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AD0F1312388AF1200F9CB75 /* iTunesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = iTunesParser.swift; path = class/iTunesParser.swift; sourceTree = "<group>"; };
+		4AD0F1312388AF1200F9CB75 /* ITParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ITParse.swift; path = class/ITParse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 				4A2AF5D523889BC4000A7EB6 /* Main.storyboard */,
 				4A2AF5D823889BC4000A7EB6 /* Info.plist */,
 				4A2AF5D923889BC4000A7EB6 /* mpfree.entitlements */,
-				4AD0F1312388AF1200F9CB75 /* iTunesParser.swift */,
+				4AD0F1312388AF1200F9CB75 /* ITParse.swift */,
 			);
 			path = mpfree;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 			files = (
 				4A2AF5D223889BC3000A7EB6 /* ViewController.swift in Sources */,
 				4A2AF5D023889BC3000A7EB6 /* AppDelegate.swift in Sources */,
-				4AD0F1322388AF1200F9CB75 /* iTunesParser.swift in Sources */,
+				4AD0F1322388AF1200F9CB75 /* ITParse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
