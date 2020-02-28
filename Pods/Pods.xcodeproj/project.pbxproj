@@ -79,7 +79,7 @@
 		20FB4AC2C592B1266D1AE55C29361337 /* CommentFrame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CommentFrame.swift; path = OutcastID3/Classes/Frames/CommentFrame.swift; sourceTree = "<group>"; };
 		278EE74FF881D5B7D004BA82A02F090C /* Preferences.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Preferences.xcconfig; sourceTree = "<group>"; };
 		2FA402A73064BAB9772B357B9C2CC244 /* PreferencesStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreferencesStyle.swift; path = Sources/Preferences/PreferencesStyle.swift; sourceTree = "<group>"; };
-		315B71351FF2F834EB48C7FEA3956559 /* libPods-mpfree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-mpfree.a"; path = "libPods-mpfree.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		315B71351FF2F834EB48C7FEA3956559 /* libPods-mpfree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mpfree.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		342381333837D568912A6E7C96B11F81 /* Preferences-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Preferences-umbrella.h"; sourceTree = "<group>"; };
 		38702C1D1E8EAC8837FB72FFE80C9EAE /* OutcastID3-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OutcastID3-dummy.m"; sourceTree = "<group>"; };
 		3CA12ED32277F73BAC2AA80DAE9B37C1 /* Pods-mpfree-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mpfree-dummy.m"; sourceTree = "<group>"; };
@@ -90,8 +90,8 @@
 		5EC2FC2EBF847F7306F04BCDC94A2E34 /* TableOfContentsFrame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TableOfContentsFrame.swift; path = OutcastID3/Classes/Frames/TableOfContentsFrame.swift; sourceTree = "<group>"; };
 		5F73B194FA033616FCC9BCC9AC00EE49 /* RawFrame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RawFrame.swift; path = OutcastID3/Classes/Frames/RawFrame.swift; sourceTree = "<group>"; };
 		679CFA04237B1583F144F3A12FA2F0F8 /* OutcastID3.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OutcastID3.modulemap; sourceTree = "<group>"; };
-		681ED615647247731F0CEE24CDA75984 /* libDefaults.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libDefaults.a; path = libDefaults.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A115D5F73B04DD7F1B7818EDD9B2EF3 /* libPreferences.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPreferences.a; path = libPreferences.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		681ED615647247731F0CEE24CDA75984 /* libDefaults.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDefaults.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A115D5F73B04DD7F1B7818EDD9B2EF3 /* libPreferences.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPreferences.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1174278F4119546DCA60A1A61364EB /* MP3File+ReadTag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MP3File+ReadTag.swift"; path = "OutcastID3/Classes/MP3File+ReadTag.swift"; sourceTree = "<group>"; };
 		71264D057C9EB9B476B88606C6236BCF /* Defaults-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Defaults-dummy.m"; sourceTree = "<group>"; };
 		72AFEF7451561F8A48F0255DF53CF7C3 /* StringEncoding+ID3.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringEncoding+ID3.swift"; path = "OutcastID3/Classes/StringEncoding+ID3.swift"; sourceTree = "<group>"; };
@@ -99,13 +99,13 @@
 		742F6E78B769BFDED4BFA95270D0B046 /* SegmentedControlStyleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentedControlStyleViewController.swift; path = Sources/Preferences/SegmentedControlStyleViewController.swift; sourceTree = "<group>"; };
 		75A4748E43A53F2471A9E5DE7C22F21D /* UrlFrame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UrlFrame.swift; path = OutcastID3/Classes/Frames/UrlFrame.swift; sourceTree = "<group>"; };
 		7B5ABC7A49657071A1BB391CF56BC2C6 /* util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = util.swift; path = Sources/Preferences/util.swift; sourceTree = "<group>"; };
-		7C3CA3D8A237D3FA86D964DD6CEA1FCA /* libOutcastID3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libOutcastID3.a; path = libOutcastID3.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C3CA3D8A237D3FA86D964DD6CEA1FCA /* libOutcastID3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOutcastID3.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		81DBD5DE947C2A51CFBA31837BF1DC5A /* Preferences-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Preferences-prefix.pch"; sourceTree = "<group>"; };
 		81E85343A04F18A113A73B96A05637DE /* FrameBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FrameBuilder.swift; path = OutcastID3/Classes/FrameBuilder.swift; sourceTree = "<group>"; };
 		82ED6D0B0A8C63FA7CBA824729851AAB /* Pods-mpfree-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mpfree-acknowledgements.markdown"; sourceTree = "<group>"; };
 		860095CEFFA9F5949B4CC8B658DB03D5 /* Defaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Defaults.swift; path = Sources/Defaults/Defaults.swift; sourceTree = "<group>"; };
 		934BC5C0CFA7A6454785C3CB3010F647 /* PreferencePane.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreferencePane.swift; path = Sources/Preferences/PreferencePane.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A87541D0B34944D0314B9C1E2D1EBA29 /* Localization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Localization.swift; path = Sources/Preferences/Localization.swift; sourceTree = "<group>"; };
 		AA89AF6DAD358F8A07987F0A2B57CF06 /* StringFrame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringFrame.swift; path = OutcastID3/Classes/Frames/StringFrame.swift; sourceTree = "<group>"; };
 		ADB3B8A9873628F93EE4847CA72B55E7 /* Frame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Frame.swift; path = OutcastID3/Classes/Frame.swift; sourceTree = "<group>"; };
@@ -230,7 +230,6 @@
 				7B5ABC7A49657071A1BB391CF56BC2C6 /* util.swift */,
 				C475AD0CBD07DA39211E1848B7B2C2D2 /* Support Files */,
 			);
-			name = Preferences;
 			path = Preferences;
 			sourceTree = "<group>";
 		};
@@ -277,7 +276,6 @@
 				12C107996B997BCB31A88F8F311FB3FE /* UserUrlFrame.swift */,
 				6B21B99C21AAC8AD0F3322353F19E4B6 /* Support Files */,
 			);
-			name = OutcastID3;
 			path = OutcastID3;
 			sourceTree = "<group>";
 		};
@@ -300,7 +298,6 @@
 				C986AD5BCEAE1BAE07CEBAB3B36824A1 /* util.swift */,
 				504328145C82CA57790D780EBB5DC46D /* Support Files */,
 			);
-			name = Defaults;
 			path = Defaults;
 			sourceTree = "<group>";
 		};
@@ -441,6 +438,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					BB31DD0F2BD316AA60F8CB2059F1F9B7 = {
+						LastSwiftMigration = 1130;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
