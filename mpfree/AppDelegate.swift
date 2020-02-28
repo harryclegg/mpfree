@@ -12,24 +12,18 @@ import Preferences
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+
     @IBOutlet private var window: NSWindow!
 
-    lazy var preferences: [PreferencePane] = [
-        GeneralPreferenceViewController(),
-        AdvancedPreferenceViewController()
-    ]
-
     lazy var preferencesWindowController = PreferencesWindowController(
-        preferencePanes: preferences,
-        style: .toolbarItems,
-        animated: true,
-        hidesToolbarForSingleItem: true
+        preferencePanes: [
+            GeneralPreferenceViewController(),
+            ExportingPreferenceViewController()
+        ]
     )
 
-    func applicationWillFinishLaunching(_ notification: Notification) {
-    }
-
-    @IBAction func preferencesMenuItemActionHandler(_ sender: NSMenuItem) {
+    @IBAction
+    func preferencesMenuItemActionHandler(_ sender: NSMenuItem) {
         preferencesWindowController.show()
     }
     
@@ -39,8 +33,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        preferencesWindowController.show(preferencePane: .advanced)
-
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

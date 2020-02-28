@@ -13,18 +13,15 @@
 		4A2AF5D723889BC4000A7EB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2AF5D523889BC4000A7EB6 /* Main.storyboard */; };
 		4A2AF5E323889BC4000A7EB6 /* mpfreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AF5E223889BC4000A7EB6 /* mpfreeTests.swift */; };
 		4A2AF5EE23889BC4000A7EB6 /* mpfreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AF5ED23889BC4000A7EB6 /* mpfreeUITests.swift */; };
-		4A7C511F23F1FC9700C1F4E4 /* icons8-export-90 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7C511D23F1FC9700C1F4E4 /* icons8-export-90 copy.png */; };
-		4A7C512023F1FC9700C1F4E4 /* icons8-filter-90 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7C511E23F1FC9700C1F4E4 /* icons8-filter-90 copy.png */; };
 		4A867BA423CA211C005D88BA /* CheckboxCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A867BA323CA211C005D88BA /* CheckboxCellView.swift */; };
-		4A867BA623CA63A1005D88BA /* ExportFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A867BA523CA63A0005D88BA /* ExportFiltersViewController.swift */; };
 		4AB9473923971B9200A5872A /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB9473823971B9200A5872A /* WindowController.swift */; };
 		4AB9473B2399A72800A5872A /* ITParsePlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB9473A2399A72800A5872A /* ITParsePlaylist.swift */; };
 		4AB9473D2399A76400A5872A /* ITParsePlaylistFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB9473C2399A76400A5872A /* ITParsePlaylistFolder.swift */; };
-		4AC2550A240977E300D37417 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC25509240977E300D37417 /* Preferences.swift */; };
-		4AC2550C240977F500D37417 /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2550B240977F500D37417 /* GeneralPreferenceViewController.swift */; };
-		4AC2550E2409785800D37417 /* AdvancedPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2550D2409785800D37417 /* AdvancedPreferenceViewController.swift */; };
-		4AC2551024097B3E00D37417 /* AdvancedPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC2550F24097B3E00D37417 /* AdvancedPreferenceViewController.xib */; };
-		4AC2551224097B8300D37417 /* GeneralPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC2551124097B8300D37417 /* GeneralPreferenceViewController.xib */; };
+		4AC2969C240988D500C928E2 /* GeneralPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC2969B240988D500C928E2 /* GeneralPreferenceViewController.xib */; };
+		4AC296A024098B5800C928E2 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2969F24098B5800C928E2 /* Preferences.swift */; };
+		4AC296A224098E0A00C928E2 /* ExportingPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC296A124098E0A00C928E2 /* ExportingPreferenceViewController.xib */; };
+		4AC296A424098F4500C928E2 /* ExportingPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC296A324098F4500C928E2 /* ExportingPreferenceViewController.swift */; };
+		4AC296A624098F7B00C928E2 /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC296A524098F7B00C928E2 /* GeneralPreferenceViewController.swift */; };
 		4AD0F1322388AF1200F9CB75 /* ITParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0F1312388AF1200F9CB75 /* ITParse.swift */; };
 		DDEECE93712E4B3B34EDF79B /* libPods-mpfree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEABC154F308447E747081E5 /* libPods-mpfree.a */; };
 /* End PBXBuildFile section */
@@ -73,18 +70,15 @@
 		4A2AF5E923889BC4000A7EB6 /* mpfreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mpfreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A2AF5ED23889BC4000A7EB6 /* mpfreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mpfreeUITests.swift; sourceTree = "<group>"; };
 		4A2AF5EF23889BC4000A7EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A7C511D23F1FC9700C1F4E4 /* icons8-export-90 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-export-90 copy.png"; sourceTree = "<group>"; };
-		4A7C511E23F1FC9700C1F4E4 /* icons8-filter-90 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-filter-90 copy.png"; sourceTree = "<group>"; };
 		4A867BA323CA211C005D88BA /* CheckboxCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCellView.swift; sourceTree = "<group>"; };
-		4A867BA523CA63A0005D88BA /* ExportFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportFiltersViewController.swift; sourceTree = "<group>"; };
 		4AB9473823971B9200A5872A /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		4AB9473A2399A72800A5872A /* ITParsePlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITParsePlaylist.swift; sourceTree = "<group>"; };
 		4AB9473C2399A76400A5872A /* ITParsePlaylistFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITParsePlaylistFolder.swift; sourceTree = "<group>"; };
-		4AC25509240977E300D37417 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
-		4AC2550B240977F500D37417 /* GeneralPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferenceViewController.swift; sourceTree = "<group>"; };
-		4AC2550D2409785800D37417 /* AdvancedPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPreferenceViewController.swift; sourceTree = "<group>"; };
-		4AC2550F24097B3E00D37417 /* AdvancedPreferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AdvancedPreferenceViewController.xib; path = mpfree/UI/Preferences/AdvancedPreferenceViewController.xib; sourceTree = SOURCE_ROOT; };
-		4AC2551124097B8300D37417 /* GeneralPreferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralPreferenceViewController.xib; sourceTree = "<group>"; };
+		4AC2969B240988D500C928E2 /* GeneralPreferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralPreferenceViewController.xib; sourceTree = "<group>"; };
+		4AC2969F24098B5800C928E2 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		4AC296A124098E0A00C928E2 /* ExportingPreferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExportingPreferenceViewController.xib; sourceTree = "<group>"; };
+		4AC296A324098F4500C928E2 /* ExportingPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportingPreferenceViewController.swift; sourceTree = "<group>"; };
+		4AC296A524098F7B00C928E2 /* GeneralPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferenceViewController.swift; sourceTree = "<group>"; };
 		4AD0F1312388AF1200F9CB75 /* ITParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITParse.swift; sourceTree = "<group>"; };
 		81357C5FAA8E4B60B0C98E5A /* Pods-mpfree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpfree.release.xcconfig"; path = "Target Support Files/Pods-mpfree/Pods-mpfree.release.xcconfig"; sourceTree = "<group>"; };
 		D021FF900F60AB01E2ED8AA6 /* Pods-mpfree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpfree.debug.xcconfig"; path = "Target Support Files/Pods-mpfree/Pods-mpfree.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,8 +145,8 @@
 		4A2AF5CE23889BC3000A7EB6 /* mpfree */ = {
 			isa = PBXGroup;
 			children = (
+				4AC296A7240990C400C928E2 /* Model */,
 				4AB9473F2399A7F100A5872A /* UI */,
-				4AB9473E2399A7DD00A5872A /* ITParse */,
 				4A2AF5CF23889BC3000A7EB6 /* AppDelegate.swift */,
 				4A2AF5D323889BC4000A7EB6 /* Assets.xcassets */,
 				4A2AF5D823889BC4000A7EB6 /* Info.plist */,
@@ -179,15 +173,6 @@
 			path = mpfreeUITests;
 			sourceTree = "<group>";
 		};
-		4A7C511A23F1FAAE00C1F4E4 /* icons */ = {
-			isa = PBXGroup;
-			children = (
-				4A7C511D23F1FC9700C1F4E4 /* icons8-export-90 copy.png */,
-				4A7C511E23F1FC9700C1F4E4 /* icons8-filter-90 copy.png */,
-			);
-			path = icons;
-			sourceTree = "<group>";
-		};
 		4AB9473E2399A7DD00A5872A /* ITParse */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,11 +186,10 @@
 		4AB9473F2399A7F100A5872A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4A2AF5D523889BC4000A7EB6 /* Main.storyboard */,
+				4AB9473823971B9200A5872A /* WindowController.swift */,
 				4AC25508240977CD00D37417 /* Preferences */,
-				4AC255072409728600D37417 /* View */,
-				4AC255062409727E00D37417 /* Window */,
-				4AC255052409727200D37417 /* Storyboard */,
-				4A7C511A23F1FAAE00C1F4E4 /* icons */,
+				4AC255072409728600D37417 /* Export */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -218,42 +202,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4AC255052409727200D37417 /* Storyboard */ = {
+		4AC255072409728600D37417 /* Export */ = {
 			isa = PBXGroup;
 			children = (
-				4A2AF5D523889BC4000A7EB6 /* Main.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		4AC255062409727E00D37417 /* Window */ = {
-			isa = PBXGroup;
-			children = (
-				4AB9473823971B9200A5872A /* WindowController.swift */,
-			);
-			path = Window;
-			sourceTree = "<group>";
-		};
-		4AC255072409728600D37417 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4A867BA523CA63A0005D88BA /* ExportFiltersViewController.swift */,
 				4A2AF5D123889BC3000A7EB6 /* PlaylistTableViewController.swift */,
 				4A867BA323CA211C005D88BA /* CheckboxCellView.swift */,
 			);
-			path = View;
+			path = Export;
 			sourceTree = "<group>";
 		};
 		4AC25508240977CD00D37417 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				4AC25509240977E300D37417 /* Preferences.swift */,
-				4AC2550B240977F500D37417 /* GeneralPreferenceViewController.swift */,
-				4AC2550F24097B3E00D37417 /* AdvancedPreferenceViewController.xib */,
-				4AC2550D2409785800D37417 /* AdvancedPreferenceViewController.swift */,
-				4AC2551124097B8300D37417 /* GeneralPreferenceViewController.xib */,
+				4AC2969B240988D500C928E2 /* GeneralPreferenceViewController.xib */,
+				4AC296A124098E0A00C928E2 /* ExportingPreferenceViewController.xib */,
+				4AC2969F24098B5800C928E2 /* Preferences.swift */,
+				4AC296A324098F4500C928E2 /* ExportingPreferenceViewController.swift */,
+				4AC296A524098F7B00C928E2 /* GeneralPreferenceViewController.swift */,
 			);
 			path = Preferences;
+			sourceTree = "<group>";
+		};
+		4AC296A7240990C400C928E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AB9473E2399A7DD00A5872A /* ITParse */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,12 +337,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A7C511F23F1FC9700C1F4E4 /* icons8-export-90 copy.png in Resources */,
+				4AC2969C240988D500C928E2 /* GeneralPreferenceViewController.xib in Resources */,
 				4A2AF5D423889BC4000A7EB6 /* Assets.xcassets in Resources */,
-				4AC2551224097B8300D37417 /* GeneralPreferenceViewController.xib in Resources */,
 				4A2AF5D723889BC4000A7EB6 /* Main.storyboard in Resources */,
-				4AC2551024097B3E00D37417 /* AdvancedPreferenceViewController.xib in Resources */,
-				4A7C512023F1FC9700C1F4E4 /* icons8-filter-90 copy.png in Resources */,
+				4AC296A224098E0A00C928E2 /* ExportingPreferenceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,17 +390,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AC2550C240977F500D37417 /* GeneralPreferenceViewController.swift in Sources */,
 				4AB9473D2399A76400A5872A /* ITParsePlaylistFolder.swift in Sources */,
 				4AB9473B2399A72800A5872A /* ITParsePlaylist.swift in Sources */,
-				4A867BA623CA63A1005D88BA /* ExportFiltersViewController.swift in Sources */,
-				4AC2550E2409785800D37417 /* AdvancedPreferenceViewController.swift in Sources */,
+				4AC296A024098B5800C928E2 /* Preferences.swift in Sources */,
+				4AC296A624098F7B00C928E2 /* GeneralPreferenceViewController.swift in Sources */,
 				4A2AF5D223889BC3000A7EB6 /* PlaylistTableViewController.swift in Sources */,
 				4AB9473923971B9200A5872A /* WindowController.swift in Sources */,
 				4A867BA423CA211C005D88BA /* CheckboxCellView.swift in Sources */,
 				4A2AF5D023889BC3000A7EB6 /* AppDelegate.swift in Sources */,
+				4AC296A424098F4500C928E2 /* ExportingPreferenceViewController.swift in Sources */,
 				4AD0F1322388AF1200F9CB75 /* ITParse.swift in Sources */,
-				4AC2550A240977E300D37417 /* Preferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

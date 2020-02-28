@@ -8,6 +8,7 @@
 
 import Cocoa
 import iTunesLibrary
+import Defaults
 
 /// A enum that represents the list of columns in the outline view. Enum is preferred over
 /// string literals as they are checked at compile-time. Repeating the same strings over
@@ -41,23 +42,18 @@ class PlaylistTableViewController: NSViewController {
     var startsWith = ""
     var endsWith = ""
     var shouldRemovePrefix = false
-    
+    var shouldRemovePostfix = false
+
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startsWith = Defaults[.exportFilterPrefixString]
+        endsWith = Defaults[.exportFilterPostfixString]
+        
+        shouldRemovePrefix = Defaults[.exportStripPathPrefix]
+        shouldRemovePostfix = Defaults[.exportStripPathPostfix]
 
-        let defaults = UserDefaults.standard
-        if let startsWithFromUserDefaults = defaults.string(forKey: "filterStartsWith") {
-            startsWith = startsWithFromUserDefaults
-        }
-        if let endsWithFromUserDefaults = defaults.string(forKey: "filterEndsWith") {
-            endsWith = endsWithFromUserDefaults
-        }
-        
-        // No guard required as .bool() returns false if key not found.
-        shouldRemovePrefix = defaults.bool(forKey: "shouldRemovePrefix")
-        
         /// Do any additional setup after loading the view.
         print("mpfree: Loaded view.")
         

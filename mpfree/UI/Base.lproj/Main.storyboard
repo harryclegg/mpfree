@@ -25,7 +25,7 @@
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
-                                                <action selector="preferencesMenuItemActionHandler:" target="Voe-Tx-rLC" id="eaW-we-PHb"/>
+                                                <action selector="preferencesMenuItemActionHandler:" target="Voe-Tx-rLC" id="Nr9-Bh-c48"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
@@ -696,31 +696,15 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <toolbar key="toolbar" implicitIdentifier="912EA19E-FF79-4CE4-BD85-E47B9D327980" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="Mik-lv-Ikm">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="1A97E7E9-5589-4AA6-A9D5-4215DE31744B" label="Filter" paletteLabel="Filter" image="icons8-filter-90 copy" id="328-FY-800">
-                                    <nil key="toolTip"/>
-                                    <size key="minSize" width="36" height="24"/>
-                                    <size key="maxSize" width="54" height="24"/>
-                                    <button key="view" verticalHuggingPriority="750" id="Z8z-5J-AL3">
-                                        <rect key="frame" x="0.0" y="14" width="54" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="icons8-filter-90 copy" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j7e-0O-6yX">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <connections>
-                                        <action selector="showFilterView:" target="B8D-0N-5wS" id="nTC-oO-0JJ"/>
-                                    </connections>
-                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ew3-Lq-mWH"/>
-                                <toolbarItem implicitItemIdentifier="61ECE2DF-3A48-48B3-9827-0B81AF160925" label="Export" paletteLabel="Export" image="icons8-export-90 copy" id="a9f-4X-nib">
+                                <toolbarItem implicitItemIdentifier="61ECE2DF-3A48-48B3-9827-0B81AF160925" label="Export" paletteLabel="Export" image="ExportIcon" id="a9f-4X-nib">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="36" height="24"/>
                                     <size key="maxSize" width="60" height="24"/>
                                     <button key="view" verticalHuggingPriority="750" id="2Ik-qX-N2g">
                                         <rect key="frame" x="0.0" y="14" width="60" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="icons8-export-90 copy" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uCx-7w-jXR">
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ExportIcon" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uCx-7w-jXR">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -731,8 +715,6 @@
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="ew3-Lq-mWH"/>
-                                <toolbarItem reference="328-FY-800"/>
                                 <toolbarItem reference="ew3-Lq-mWH"/>
                                 <toolbarItem reference="a9f-4X-nib"/>
                             </defaultToolbarItems>
@@ -916,162 +898,8 @@
             </objects>
             <point key="canvasLocation" x="144" y="1028.5"/>
         </scene>
-        <!--Window Controller-->
-        <scene sceneID="b6f-8K-LBP">
-            <objects>
-                <windowController storyboardIdentifier="ExportFiltersWindowController" id="Dk8-xy-CHg" sceneMemberID="viewController">
-                    <window key="window" title="Export Filters" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Ywh-49-Tbi">
-                        <windowStyleMask key="styleMask" titled="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="17" y="1511" width="450" height="150"/>
-                        <rect key="screenRect" x="-408" y="1050" width="2560" height="1417"/>
-                        <connections>
-                            <outlet property="delegate" destination="Dk8-xy-CHg" id="rFk-N4-AJ7"/>
-                        </connections>
-                    </window>
-                    <connections>
-                        <segue destination="fVc-TT-6hW" kind="relationship" relationship="window.shadowedContentViewController" id="CAO-ef-ITg"/>
-                    </connections>
-                </windowController>
-                <customObject id="OGT-RU-xnd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="944" y="1134"/>
-        </scene>
-        <!--Export Filters View Controller-->
-        <scene sceneID="EjJ-QI-dJu">
-            <objects>
-                <viewController id="fVc-TT-6hW" customClass="ExportFiltersViewController" customModule="mpfree" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="40e-fn-2Ib">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="230"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hah-FJ-9E3">
-                                <rect key="frame" x="18" y="191" width="232" height="19"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Export Playlist Selection Filters" id="PZh-VB-Gtr">
-                                    <font key="font" metaFont="systemBold" size="15"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5cO-rI-S82">
-                                <rect key="frame" x="30" y="99" width="74" height="16"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Starts with:" id="803-Sj-zIA">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="koW-8N-zXu">
-                                <rect key="frame" x="30" y="128" width="78" height="16"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="Root Folder:" id="BWR-7C-x0s">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Td-gZ-h65">
-                                <rect key="frame" x="30" y="68" width="67" height="16"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Ends with:" id="wtw-3Y-ODf">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="gIu-3t-Zhq">
-                                <rect key="frame" x="126" y="96" width="305" height="21"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="8OL-tJ-Rg2">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="mnh-tK-SQA">
-                                <rect key="frame" x="126" y="65" width="305" height="21"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Q8H-pU-Xua">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zrP-LA-915">
-                                <rect key="frame" x="124" y="122" width="309" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Root Folder" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="JZl-G2-Mjw" id="Xb5-VZ-bgs">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="nhk-nJ-xph">
-                                        <items>
-                                            <menuItem title="Root Folder" state="on" id="JZl-G2-Mjw"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                            </popUpButton>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYj-RK-XOa">
-                                <rect key="frame" x="366" y="13" width="70" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OEh-PJ-bm5">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <string key="keyEquivalent" base64-UTF8="YES">
-DQ
-</string>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="saveNewFilters:" target="fVc-TT-6hW" id="XgD-6f-if5"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zs3-pL-ntw">
-                                <rect key="frame" x="18" y="15" width="156" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Apply these rules now" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="UOP-sr-0no">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NFI-ic-jEy">
-                                <rect key="frame" x="18" y="167" width="358" height="16"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Playlists matching the following rules are selected on load." id="80E-W6-WJj">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GlN-rj-TNT">
-                                <rect key="frame" x="290" y="13" width="82" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2zo-nK-klW">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <string key="keyEquivalent" base64-UTF8="YES">
-Gw
-</string>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="cancelFilterChange:" target="fVc-TT-6hW" id="ceM-L5-1rK"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                    </view>
-                    <connections>
-                        <outlet property="applyNowCheckButton" destination="Zs3-pL-ntw" id="rrN-gc-IiA"/>
-                        <outlet property="endsWithTextField" destination="mnh-tK-SQA" id="MOO-hH-fvb"/>
-                        <outlet property="startsWithTextField" destination="gIu-3t-Zhq" id="2lP-ST-Snd"/>
-                    </connections>
-                </viewController>
-                <customObject id="gWf-3e-yFn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1607" y="1175"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="icons8-export-90 copy" width="90" height="90"/>
-        <image name="icons8-filter-90 copy" width="90" height="90"/>
+        <image name="ExportIcon" width="90" height="90"/>
     </resources>
 </document>
