@@ -104,3 +104,5 @@ Carthage/Build
 # `pod install` in .travis.yml
 #
 # Pods/
+*.*/xcuserdata/
+mpfree.xcodeproj/xcuserdata/harry.xcuserdatad/xcschemes/xcschememanagement.plist

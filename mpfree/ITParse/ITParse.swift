@@ -109,7 +109,7 @@ class ITParse {
         let targetPlaylists = self.findAllPlaylists(topFolder: self.targetTree, selectedOnly: true)
         
         for playlist in targetPlaylists {
-            guard let destFolderURL = exportURL.createAndChangeToFolder(playlist.getOutputName()) else {
+            guard let destFolderURL = exportURL.createAndChangeToFolder(playlist.getOutputName(shouldRemovePrefix: false, prefixToRemove: "")) else {
                 continue
             }
             let playlistItems = playlist.asPlaylist.items

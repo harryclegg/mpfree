@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PlaylistTableViewController.swift
 //  mpfree
 //
 //  Created by Harry Clegg on 22/11/2019.
@@ -28,7 +28,7 @@ enum PlaylistTableViewColumn: String {
     }
 }
 
-class ViewController: NSViewController {
+class PlaylistTableViewController: NSViewController {
     
     // MARK: - IBOutlet Properties
     @IBOutlet weak var outlineView: NSOutlineView!
@@ -40,6 +40,7 @@ class ViewController: NSViewController {
     
     var startsWith = ""
     var endsWith = ""
+    var shouldRemovePrefix = false
     
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
@@ -53,6 +54,9 @@ class ViewController: NSViewController {
         if let endsWithFromUserDefaults = defaults.string(forKey: "filterEndsWith") {
             endsWith = endsWithFromUserDefaults
         }
+        
+        // No guard required as .bool() returns false if key not found.
+        shouldRemovePrefix = defaults.bool(forKey: "shouldRemovePrefix")
         
         /// Do any additional setup after loading the view.
         print("mpfree: Loaded view.")
@@ -73,7 +77,7 @@ class ViewController: NSViewController {
     }
 }
 
-extension ViewController: NSOutlineViewDataSource, NSOutlineViewDelegate {
+extension PlaylistTableViewController: NSOutlineViewDataSource, NSOutlineViewDelegate {
     
     /// You must give each row a unique identifier, referred to as `item` by the outline view
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
@@ -142,6 +146,7 @@ extension ViewController: NSOutlineViewDataSource, NSOutlineViewDelegate {
             switch(item) {
                 
             case let playlist as ITParsePlaylist:
+                cell.checkboxButton.title = playlist.name
                 if playlist.isSelected(startsWith: startsWith, endsWith: endsWith) {
                     cell.checkboxButton.state = NSControl.StateValue.on
                 } else {
@@ -173,7 +178,7 @@ extension ViewController: NSOutlineViewDataSource, NSOutlineViewDelegate {
 
         case .outputName:
             if let playlist = item as? ITParsePlaylist {
-                text = String(playlist.getOutputName())
+                text = String(playlist.getOutputName(shouldRemovePrefix: shouldRemovePrefix, prefixToRemove: startsWith))
             }
             
             let view = outlineView.makeView(withIdentifier: .outputName, owner: self) as? NSTableCellView
@@ -190,7 +195,7 @@ extension ViewController: NSOutlineViewDataSource, NSOutlineViewDelegate {
     
 }
 
-extension ViewController: CheckboxCellViewDelegate {
+extension PlaylistTableViewController: CheckboxCellViewDelegate {
     /// A delegate function where we can act on update from the checkbox in the "Is Selected" column
     func checkboxCellView(_ cell: CheckboxCellView, didChangeState state: NSControl.StateValue) {
         

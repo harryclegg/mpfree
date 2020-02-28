@@ -52,9 +52,14 @@ class ITParsePlaylist : NSObject {
         manualSelection = false
     }
     
-    func getOutputName() -> String {
+    func getOutputName(shouldRemovePrefix: Bool, prefixToRemove: String) -> String {
         var p = self.parent
         var outputName: String = name
+        
+        // Remove prefix if supposed to.
+        if shouldRemovePrefix {
+            outputName = outputName.deletePrefix(prefixToRemove)
+        }
         
         // Build name path by recursing up the playlist tree.
         while !(p.isTarget) {
@@ -64,4 +69,11 @@ class ITParsePlaylist : NSObject {
         return outputName
     }
     
+}
+
+extension String {
+    func deletePrefix(_ prefix: String) -> String {
+        guard self.hasPrefix(prefix) else { return self }
+        return String(self.dropFirst(prefix.count))
+    }
 }
