@@ -697,14 +697,14 @@
                         <toolbar key="toolbar" implicitIdentifier="912EA19E-FF79-4CE4-BD85-E47B9D327980" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="Mik-lv-Ikm">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ew3-Lq-mWH"/>
-                                <toolbarItem implicitItemIdentifier="61ECE2DF-3A48-48B3-9827-0B81AF160925" label="Export" paletteLabel="Export" image="icons8-export-90 copy" id="a9f-4X-nib">
+                                <toolbarItem implicitItemIdentifier="61ECE2DF-3A48-48B3-9827-0B81AF160925" label="Export" paletteLabel="Export" image="ExportIcon" id="a9f-4X-nib">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="36" height="24"/>
                                     <size key="maxSize" width="60" height="24"/>
                                     <button key="view" verticalHuggingPriority="750" id="2Ik-qX-N2g">
                                         <rect key="frame" x="0.0" y="14" width="60" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="icons8-export-90 copy" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uCx-7w-jXR">
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ExportIcon" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uCx-7w-jXR">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -900,6 +900,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-export-90 copy" width="90" height="90"/>
+        <image name="ExportIcon" width="90" height="90"/>
     </resources>
 </document>
