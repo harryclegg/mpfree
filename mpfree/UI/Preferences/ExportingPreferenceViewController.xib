@@ -6,8 +6,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="ImportingPreferenceViewController" customModule="mpfree" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="ExportingPreferenceViewController" customModule="mpfree" customModuleProvider="target">
             <connections>
+                <outlet property="exportFilterPostfixStringTextField" destination="G8L-Gw-dFh" id="7SZ-Pe-awJ"/>
+                <outlet property="exportFilterPrefixStringTextField" destination="Yzs-sP-q4m" id="szE-ft-KeB"/>
+                <outlet property="shouldStripPathPostfixCheckbox" destination="gzs-af-GlE" id="4gL-kI-K1X"/>
+                <outlet property="shouldStripPathPrefixCheckbox" destination="yIw-ox-fFa" id="yE4-w1-RkR"/>
                 <outlet property="view" destination="c22-O7-iKe" id="ZQe-UH-LCX"/>
             </connections>
         </customObject>
@@ -53,7 +57,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d2F-su-MKR">
-                    <rect key="frame" x="30" y="109" width="67" height="16"/>
+                    <rect key="frame" x="30" y="81" width="67" height="16"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Ends with:" id="jtt-ii-C8M">
                         <font key="font" metaFont="system"/>
@@ -69,15 +73,21 @@
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="updatePreferences:" target="-2" id="OYA-PO-nII"/>
+                    </connections>
                 </textField>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="G8L-Gw-dFh">
-                    <rect key="frame" x="126" y="106" width="305" height="21"/>
+                    <rect key="frame" x="126" y="78" width="305" height="21"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="edr-yZ-6kX">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="updatePreferences:" target="-2" id="vab-3l-GpV"/>
+                    </connections>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Eb-fN-tfE">
                     <rect key="frame" x="124" y="163" width="309" height="25"/>
@@ -101,6 +111,28 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yIw-ox-fFa">
+                    <rect key="frame" x="124" y="113" width="113" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Strip on export" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="InQ-BO-QKQ">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="updatePreferences:" target="-2" id="bg5-H4-nGe"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gzs-af-GlE">
+                    <rect key="frame" x="124" y="54" width="113" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Strip on export" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="irL-nY-Q8T">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="updatePreferences:" target="-2" id="Ubc-Z8-XAr"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Xc1-oC-jbN" secondAttribute="bottom" constant="124" id="Ygh-kW-pw7"/>
@@ -108,7 +140,7 @@
                 <constraint firstItem="Xc1-oC-jbN" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="124" id="obX-e4-hYJ"/>
                 <constraint firstItem="Xc1-oC-jbN" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="300" id="sQd-RT-oXo"/>
             </constraints>
-            <point key="canvasLocation" x="-172" y="56"/>
+            <point key="canvasLocation" x="-172" y="55.5"/>
         </customView>
         <viewController id="8sz-EX-AFa"/>
     </objects>
