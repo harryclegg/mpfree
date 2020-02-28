@@ -9,48 +9,9 @@
 import Cocoa
 
 class WindowController: NSWindowController {
-
-    
-    @IBOutlet weak var rootPlaylistToolbar: NSToolbarItem!
         
     var appDelegate: AppDelegate!
     var parser: ITParse!
-    
-    
-    @IBAction func showFilterView(_ sender: NSToolbarItem) {
-
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        let exportFiltersWindowController = storyboard.instantiateController(withIdentifier: "ExportFiltersWindowController") as! NSWindowController
-        
-        // Create the window.
-        guard let exportFiltersWindow = exportFiltersWindowController.window,
-            let resizeViewController = exportFiltersWindowController.contentViewController as? ExportFiltersViewController
-        else {return}
-
-        // Read default filter values. Apply them to the UI text boxes.
-        let defaults = UserDefaults.standard
-        if let startsWithFromUserDefaults = defaults.string(forKey: "filterStartsWith") {
-            resizeViewController.startsWithTextField.stringValue = startsWithFromUserDefaults
-        }
-        if let endsWithFromUserDefaults = defaults.string(forKey: "filterEndsWith") {
-            resizeViewController.endsWithTextField.stringValue = endsWithFromUserDefaults
-        }
-        
-        self.window!.beginSheet(exportFiltersWindow, completionHandler: { (response) in
-            // If user presses OK, do the following. Pressing cancel does nothing.
-            if response == NSApplication.ModalResponse.OK {
-                
-                // Save new filter values to defaults file.
-                defaults.set(resizeViewController.startsWithTextField.stringValue, forKey: "filterStartsWith")
-                defaults.set(resizeViewController.endsWithTextField.stringValue, forKey: "filterEndsWith")
-                
-                if resizeViewController.applyNowCheckButton.state == NSControl.StateValue.on {
-                    // Reset all playlist selections to match filters
-                    
-                }
-            }
-           })
-    }
     
     @IBAction func doExport(_ sender: NSToolbarItem) {
         
