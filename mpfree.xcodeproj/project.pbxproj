@@ -149,7 +149,6 @@
 				4AB9473F2399A7F100A5872A /* UI */,
 				4A2AF5CF23889BC3000A7EB6 /* AppDelegate.swift */,
 				4A2AF5D323889BC4000A7EB6 /* Assets.xcassets */,
-				4A7C511A23F1FAAE00C1F4E4 /* icons */,
 				4A2AF5D823889BC4000A7EB6 /* Info.plist */,
 				4A2AF5D923889BC4000A7EB6 /* mpfree.entitlements */,
 			);
@@ -174,13 +173,6 @@
 			path = mpfreeUITests;
 			sourceTree = "<group>";
 		};
-		4A7C511A23F1FAAE00C1F4E4 /* icons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = icons;
-			sourceTree = "<group>";
-		};
 		4AB9473E2399A7DD00A5872A /* ITParse */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +186,7 @@
 		4AB9473F2399A7F100A5872A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4AC296A92409921000C928E2 /* Storyboard */,
+				4A2AF5D523889BC4000A7EB6 /* Main.storyboard */,
 				4AB9473823971B9200A5872A /* WindowController.swift */,
 				4AC25508240977CD00D37417 /* Preferences */,
 				4AC255072409728600D37417 /* Export */,
@@ -237,14 +229,6 @@
 				4AB9473E2399A7DD00A5872A /* ITParse */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		4AC296A92409921000C928E2 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				4A2AF5D523889BC4000A7EB6 /* Main.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
