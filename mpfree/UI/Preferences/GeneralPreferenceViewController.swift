@@ -11,8 +11,7 @@ import Defaults
 import Preferences
 
 extension Defaults.Keys {
-    static let isCacheInvalidationHard = Key<Bool>("isCacheInvalidationHard", default: true)
-    static let isNamingThingsHard = Key<Bool>("isNamingThingsHard", default: true)
+
 }
 
 
@@ -24,36 +23,12 @@ final class GeneralPreferenceViewController: NSViewController, PreferencePane {
         return "GeneralPreferenceViewController"
     }
     
-    @IBOutlet var isCacheInvalidationHardCheckbox: NSButton!
-    @IBOutlet var isNamingThingsHardCheckbox: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if Defaults[.isCacheInvalidationHard] {
-            isCacheInvalidationHardCheckbox.state = .on
-        } else {
-            isCacheInvalidationHardCheckbox.state = .off
-        }
-        
-        if Defaults[.isNamingThingsHard] {
-            isNamingThingsHardCheckbox.state = .on
-        } else {
-            isNamingThingsHardCheckbox.state = .off
-        }
-        
+
     }
 
     @IBAction func updateProblemPreferences(_: Any) {
-        if isCacheInvalidationHardCheckbox.state == .on {
-            Defaults[.isCacheInvalidationHard] = true
-        } else {
-            Defaults[.isCacheInvalidationHard] = false
-        }
-        
-        if isNamingThingsHardCheckbox.state == .on {
-            Defaults[.isNamingThingsHard] = true
-        } else {
-            Defaults[.isNamingThingsHard] = false
-        }
         
         Defaults[.observableDummyKey] = !Defaults[.observableDummyKey]
  }
