@@ -437,7 +437,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					BB31DD0F2BD316AA60F8CB2059F1F9B7 = {
 						LastSwiftMigration = 1130;
@@ -755,7 +755,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 278EE74FF881D5B7D004BA82A02F090C /* Preferences.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -783,7 +782,6 @@
 			baseConfigurationReference = F286C729430ADE4782AAFB00FF8FE047 /* Pods-mpfree.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -806,7 +804,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6B81B507DC9710562D2D09EFC9C6552 /* Defaults.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -833,7 +830,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6B81B507DC9710562D2D09EFC9C6552 /* Defaults.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -860,7 +856,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4ACE55E1963C9F836C44C2B6B431DF9E /* OutcastID3.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -888,7 +883,6 @@
 			baseConfigurationReference = F7860477B729E74C277CB2C42FA3DCBF /* Pods-mpfree.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -911,7 +905,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 278EE74FF881D5B7D004BA82A02F090C /* Preferences.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -938,7 +931,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4ACE55E1963C9F836C44C2B6B431DF9E /* OutcastID3.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
