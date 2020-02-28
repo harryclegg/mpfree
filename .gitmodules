@@ -1,0 +1,3 @@
+[submodule "ID3TagEditor"]
+	path = ID3TagEditor
+	url = https://github.com/chicio/ID3TagEditor.git
