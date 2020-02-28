@@ -8,6 +8,7 @@
 
 import Cocoa
 import iTunesLibrary
+import Defaults
 
 class ITParsePlaylistFolder: NSObject {
     
@@ -117,17 +118,9 @@ class ITParsePlaylistFolder: NSObject {
         
         for playlist in self.playlists {
             
-            var startsWith = ""
-            var endsWith = ""
-            
-            let defaults = UserDefaults.standard
-            if let startsWithFromUserDefaults = defaults.string(forKey: "filterStartsWith") {
-                startsWith = startsWithFromUserDefaults
-            }
-            if let endsWithFromUserDefaults = defaults.string(forKey: "filterEndsWith") {
-                endsWith = endsWithFromUserDefaults
-            }
-            
+            var startsWith = Defaults[.exportFilterPrefixString]
+            var endsWith = Defaults[.exportFilterPostfixString]
+
             if playlist.isSelected(startsWith: startsWith, endsWith: endsWith) {
                 anyChildrenSelected = true
             } else {
