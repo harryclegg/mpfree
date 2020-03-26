@@ -135,7 +135,7 @@ class ITParse {
 
         
         do {
-            let fileName = String(format: "%d-%@-%@-%@.mp3", itemCount, ITParse.extractTag(frameValues, "TKEY"), ITParse.extractTag(frameValues, "TIT2"), ITParse.extractTag(frameValues, "TPE1"))
+            let fileName = String(format: "%02d-%@-%@.mp3", itemCount, ITParse.extractTag(frameValues, "TIT2"), ITParse.extractTag(frameValues, "TPE1"))
             let destPath = String(format: "%@/%@", exportURL.path, fileName)
             
             if FileManager.default.fileExists(atPath: destPath){
