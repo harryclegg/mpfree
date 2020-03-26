@@ -697,26 +697,43 @@
                         <toolbar key="toolbar" implicitIdentifier="912EA19E-FF79-4CE4-BD85-E47B9D327980" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="Mik-lv-Ikm">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ew3-Lq-mWH"/>
-                                <toolbarItem implicitItemIdentifier="61ECE2DF-3A48-48B3-9827-0B81AF160925" label="Export" paletteLabel="Export" image="ExportIcon" id="a9f-4X-nib">
+                                <toolbarItem implicitItemIdentifier="61ECE2DF-3A48-48B3-9827-0B81AF160925" label="Export (Add)" paletteLabel="Export (Add)" image="exportAdd" id="a9f-4X-nib">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="36" height="24"/>
                                     <size key="maxSize" width="60" height="24"/>
                                     <button key="view" verticalHuggingPriority="750" id="2Ik-qX-N2g">
-                                        <rect key="frame" x="0.0" y="14" width="60" height="24"/>
+                                        <rect key="frame" x="7" y="14" width="60" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ExportIcon" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uCx-7w-jXR">
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="exportAdd" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uCx-7w-jXR">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
                                     <connections>
-                                        <action selector="doExport:" target="B8D-0N-5wS" id="mMD-Xe-Vqe"/>
+                                        <action selector="doExportAdd:" target="B8D-0N-5wS" id="9Ds-U9-J3I"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="3BB9E561-49CF-4BE3-B0CE-5ABABA739CF4" label="Export (Overwrite)" paletteLabel="Export (Overwrite)" image="exportOverwrite" id="gDU-1g-Hcn">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="36" height="24"/>
+                                    <size key="maxSize" width="60" height="24"/>
+                                    <button key="view" verticalHuggingPriority="750" id="oGY-Ny-I7m">
+                                        <rect key="frame" x="23" y="14" width="60" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="exportOverwrite" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8sb-4n-Wtf">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="doExportOverwrite:" target="B8D-0N-5wS" id="aYk-Yl-swn"/>
                                     </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="ew3-Lq-mWH"/>
                                 <toolbarItem reference="a9f-4X-nib"/>
+                                <toolbarItem reference="gDU-1g-Hcn"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -900,6 +917,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ExportIcon" width="90" height="90"/>
+        <image name="exportAdd" width="16" height="16"/>
+        <image name="exportOverwrite" width="16" height="16"/>
     </resources>
 </document>
