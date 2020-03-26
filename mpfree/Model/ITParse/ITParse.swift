@@ -80,8 +80,8 @@ class ITParse {
         
         if selectedOnly {
             
-            var startsWith = Defaults[.exportFilterPrefixString]
-            var endsWith = Defaults[.exportFilterPostfixString]
+            let startsWith = Defaults[.exportFilterPrefixString]
+            let endsWith = Defaults[.exportFilterPostfixString]
 
             allPlaylists = allPlaylists.filter({$0.isSelected(startsWith: startsWith, endsWith: endsWith)})
         }
@@ -163,7 +163,7 @@ class ITParse {
     
     func getDesiredFrames(tag: OutcastID3.ID3Tag, desiredFrames: [String]) -> [String: String] {
         
-        let debugPrintTags = false
+        let debugPrintTags = Defaults[.debugPrintTags]
         
         var frameDictionary = desiredFrames.reduce(into: [String: String]()) { $0[$1] = "" }
         

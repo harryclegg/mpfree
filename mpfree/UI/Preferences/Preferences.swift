@@ -12,6 +12,7 @@ import Preferences
 
 extension Defaults.Keys {
     static let observableDummyKey = Key<Bool>("dummyChanged", default: false)
+    static let debugPrintTags = Key<Bool>("debugPrintTags", default: false)
 }
 
 extension PreferencePane.Identifier {

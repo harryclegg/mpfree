@@ -108,6 +108,9 @@ class ITParsePlaylistFolder: NSObject {
         var anyChildrenSelected = false
         var allChildrenSelected = true
         
+        let startsWith = Defaults[.exportFilterPrefixString]
+        let endsWith = Defaults[.exportFilterPostfixString]
+        
         for folder in self.folders {
             if folder.getSelectionStatus() == .on {
                 anyChildrenSelected = true
@@ -117,9 +120,6 @@ class ITParsePlaylistFolder: NSObject {
         }
         
         for playlist in self.playlists {
-            
-            var startsWith = Defaults[.exportFilterPrefixString]
-            var endsWith = Defaults[.exportFilterPostfixString]
 
             if playlist.isSelected(startsWith: startsWith, endsWith: endsWith) {
                 anyChildrenSelected = true
