@@ -19,11 +19,11 @@ enum PlaylistTableViewColumn: String {
     case playlistName = "playlistName"
     case trackCount = "trackCount"
     case outputName = "outputName"
-
+    
     init?(_ tableColumn: NSTableColumn) {
         self.init(rawValue: tableColumn.identifier.rawValue)
     }
-
+    
     var cellIdentifier: NSUserInterfaceItemIdentifier {
         return NSUserInterfaceItemIdentifier(self.rawValue + "Cell")
     }
@@ -43,7 +43,7 @@ class PlaylistTableViewController: NSViewController {
     var endsWith = ""
     var shouldRemovePrefix = false
     var shouldRemovePostfix = false
-
+    
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,13 +53,13 @@ class PlaylistTableViewController: NSViewController {
         
         shouldRemovePrefix = Defaults[.exportStripPathPrefix]
         shouldRemovePostfix = Defaults[.exportStripPathPostfix]
-
+        
         /// Do any additional setup after loading the view.
         print("mpfree: Loaded view.")
         
         appDelegate = (NSApplication.shared.delegate as! AppDelegate)
         parser = appDelegate.parser
-        
+        parser.setView(tableView: self)
         parser.generateRootTree(initialRootFolderID: appDelegate.rootFolderID)
         
         outlineView.delegate = self
@@ -78,7 +78,6 @@ extension PlaylistTableViewController: NSOutlineViewDataSource, NSOutlineViewDel
     /// You must give each row a unique identifier, referred to as `item` by the outline view
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         if item == nil {
-            debugPrint(index)
             let switchPoint = parser.targetTree.folders.count
             if index >= switchPoint {
                 return parser.targetTree.playlists[index - switchPoint] as Any
@@ -120,7 +119,7 @@ extension PlaylistTableViewController: NSOutlineViewDataSource, NSOutlineViewDel
     /// Set the text for each row
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
         guard let column = PlaylistTableViewColumn(tableColumn!) else {return nil}
-
+        
         var text: String = ""
         
         switch(column) {
@@ -157,12 +156,12 @@ extension PlaylistTableViewController: NSOutlineViewDataSource, NSOutlineViewDel
                 
             default: break
             }
-
+            
             // Allows us to handle clicking on checkbox
             cell.delegate = self
             cell.item = item
             return cell
-
+            
         case .trackCount:
             if let playlist = item as? ITParsePlaylist {
                 text = String(playlist.nTracks)
@@ -171,7 +170,7 @@ extension PlaylistTableViewController: NSOutlineViewDataSource, NSOutlineViewDel
             let view = outlineView.makeView(withIdentifier: .trackCount, owner: self) as? NSTableCellView
             view?.textField?.stringValue = text
             return view
-
+            
         case .outputName:
             if let playlist = item as? ITParsePlaylist {
                 text = String(playlist.getOutputName(shouldRemovePrefix: shouldRemovePrefix, prefixToRemove: startsWith))
@@ -181,6 +180,10 @@ extension PlaylistTableViewController: NSOutlineViewDataSource, NSOutlineViewDel
             view?.textField?.stringValue = text
             return view
         }
+    }
+    
+    func reloadData() {
+        outlineView.reloadData()
     }
     
     func outlineView(_ outlineView: NSOutlineView, heightOfRow row: Int) -> CGFloat {
@@ -195,17 +198,31 @@ extension PlaylistTableViewController: CheckboxCellViewDelegate {
     /// A delegate function where we can act on update from the checkbox in the "Is Selected" column
     func checkboxCellView(_ cell: CheckboxCellView, didChangeState state: NSControl.StateValue) {
         
-        switch(cell.item) {
+        var newState: SelectionState
+        
+        // Map checkbox state to selection state.
+        switch state {
+        case .on:
+            newState = .userSelected
+        case .off:
+            newState = .userDeSelected
+        case .mixed:
+            newState = .setFromFilters
+        default:
+            return
+        }
+        
+        switch cell.item {
             
         case let playlist as ITParsePlaylist:
-            playlist.setSelection(state == .on)
+            playlist.setSelection(newState)
             
         case let folder as ITParsePlaylistFolder:
-            folder.setSelection((state == .on) || (state == .mixed))
+            folder.setSelection(newState)
             // This is more efficient than calling reload on every child since collapsed children are
             // not reloaded. They will be reloaded when they become visible
             outlineView.reloadItem(folder, reloadChildren: true)
-
+            
         default: return
         }
     }

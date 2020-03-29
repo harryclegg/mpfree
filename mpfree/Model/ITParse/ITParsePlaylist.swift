@@ -8,9 +8,11 @@
 
 import Cocoa
 import iTunesLibrary
+import Defaults
 
 class ITParsePlaylist : NSObject {
     
+    // Private variables are not changeable from outside this class.
     private(set) var name: String
     private(set) var asPlaylist: ITLibPlaylist
     private(set) var isSmart: Bool = false
@@ -19,9 +21,8 @@ class ITParsePlaylist : NSObject {
     private(set) var parent: ITParsePlaylistFolder
     private(set) var parser: ITParse
     
-    private(set) var manualSelection: Bool = false
-    private(set) var manualSelectionState: Bool = false
-        
+    private(set) var selectionState: SelectionState = .setFromFilters
+
     init(playlist: ITLibPlaylist, parent: ITParsePlaylistFolder, parser: ITParse) {
         self.asPlaylist = playlist
         self.parent = parent
@@ -31,25 +32,45 @@ class ITParsePlaylist : NSObject {
         self.nTracks = playlist.items.count
                 
         self.isSmart = (playlist.kind == ITLibPlaylistKind.smart)
+    }
         
+    func shouldBeFiltered(startsWith: String, endsWith: String) -> Bool {
+        // Parse playlist name validity using start and end filters.
+        return (startsWith.isEmpty || name.hasPrefix(startsWith)) &&
+            (endsWith.isEmpty || name.hasSuffix(endsWith))
+    }
+    
+    func shouldBeFiltered() -> Bool {
+        // Grabs the current start and end strings from persistent data then calls the filter function with those.
+        let startsWith = Defaults[.exportFilterPrefixString]
+        let endsWith = Defaults[.exportFilterPostfixString]
+        return shouldBeFiltered(startsWith: startsWith, endsWith: endsWith)
+    }
+    
+    func setSelection(_ newState: SelectionState) {
+        // Apply a new selection state to this playlist.
+        selectionState = newState;
+    }
+    
+    func isSelected() -> Bool {
+        // Grabs the current start and end strings from persistent data then calls the selection function with those.
+        let startsWith = Defaults[.exportFilterPrefixString]
+        let endsWith = Defaults[.exportFilterPostfixString]
+        return isSelected(startsWith: startsWith, endsWith: endsWith)
     }
     
     func isSelected(startsWith: String, endsWith: String) -> Bool {
-        if manualSelection {
-            return manualSelectionState
-        } else {
-            return (startsWith.isEmpty || name.hasPrefix(startsWith)) &&
-                (endsWith.isEmpty || name.hasSuffix(endsWith))
+        // Return if the current playlist is selected.
+        switch selectionState {
+        case .userSelected:
+            return true
+            
+        case .userDeSelected:
+            return false
+            
+        case .setFromFilters:
+            return shouldBeFiltered()
         }
-    }
-    
-    func setSelection(_ state: Bool) {
-        manualSelection = true
-        manualSelectionState = state
-    }
-    
-    func resetSelection() {
-        manualSelection = false
     }
     
     func getOutputName(shouldRemovePrefix: Bool, prefixToRemove: String) -> String {
