@@ -25,9 +25,13 @@ final class GeneralPreferenceViewController: NSViewController, PreferencePane {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
+    
+    public override var preferredContentSize: CGSize {
+        get { return CGSize(width: 560, height: 400) }
+        set { super.preferredContentSize = newValue }
+    }
+    
     @IBAction func updateProblemPreferences(_: Any) {
         
         Defaults[.observableDummyKey] = !Defaults[.observableDummyKey]

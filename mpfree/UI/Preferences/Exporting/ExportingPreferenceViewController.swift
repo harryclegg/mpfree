@@ -40,6 +40,11 @@ final class ExportingPreferenceViewController: NSViewController, PreferencePane 
     @IBOutlet weak var exportFilterPrefixStringTextField: NSTextField!
     @IBOutlet weak var exportFilterSuffixStringTextField: NSTextField!
     
+    public override var preferredContentSize: CGSize {
+        get { return CGSize(width: 560, height: 400) }
+        set { super.preferredContentSize = newValue }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
