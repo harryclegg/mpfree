@@ -19,7 +19,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         preferencePanes: [
             GeneralPreferenceViewController(),
             ExportingPreferenceViewController()
-        ]
+        ],
+        style: .segmentedControl
     )
 
     @IBAction
