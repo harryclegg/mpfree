@@ -98,7 +98,7 @@ class ITParse {
         if selectedOnly {
             
             let startsWith = Defaults[.exportFilterPrefixString]
-            let endsWith = Defaults[.exportFilterPostfixString]
+            let endsWith = Defaults[.exportFilterSuffixString]
 
             allPlaylists = allPlaylists.filter({$0.isSelected(startsWith: startsWith, endsWith: endsWith)})
         }

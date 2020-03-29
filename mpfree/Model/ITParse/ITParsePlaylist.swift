@@ -43,7 +43,7 @@ class ITParsePlaylist : NSObject {
     func shouldBeFiltered() -> Bool {
         // Grabs the current start and end strings from persistent data then calls the filter function with those.
         let startsWith = Defaults[.exportFilterPrefixString]
-        let endsWith = Defaults[.exportFilterPostfixString]
+        let endsWith = Defaults[.exportFilterSuffixString]
         return shouldBeFiltered(startsWith: startsWith, endsWith: endsWith)
     }
     
@@ -55,7 +55,7 @@ class ITParsePlaylist : NSObject {
     func isSelected() -> Bool {
         // Grabs the current start and end strings from persistent data then calls the selection function with those.
         let startsWith = Defaults[.exportFilterPrefixString]
-        let endsWith = Defaults[.exportFilterPostfixString]
+        let endsWith = Defaults[.exportFilterSuffixString]
         return isSelected(startsWith: startsWith, endsWith: endsWith)
     }
     
@@ -80,7 +80,7 @@ class ITParsePlaylist : NSObject {
         let shouldRemovePrefix = Defaults[.exportStripPathPrefix]
         let shouldRemoveSuffix = Defaults[.exportStripPathSuffix]
         let startsWith = Defaults[.exportFilterPrefixString]
-        let endsWith = Defaults[.exportFilterPostfixString]
+        let endsWith = Defaults[.exportFilterSuffixString]
         
         // Remove prefix if supposed to.
         if shouldRemovePrefix {

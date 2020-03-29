@@ -42,17 +42,17 @@ class PlaylistTableViewController: NSViewController {
     var startsWith = ""
     var endsWith = ""
     var shouldRemovePrefix = false
-    var shouldRemovePostfix = false
+    var shouldRemoveSuffix = false
     
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         startsWith = Defaults[.exportFilterPrefixString]
-        endsWith = Defaults[.exportFilterPostfixString]
+        endsWith = Defaults[.exportFilterSuffixString]
         
         shouldRemovePrefix = Defaults[.exportStripPathPrefix]
-        shouldRemovePostfix = Defaults[.exportStripPathSuffix]
+        shouldRemoveSuffix = Defaults[.exportStripPathSuffix]
         
         /// Do any additional setup after loading the view.
         print("mpfree: Loaded view.")
