@@ -11,11 +11,13 @@ import Defaults
 import Preferences
 
 extension Defaults.Keys {
-    static let exportFilterPrefixString = Key<String>("exportFilterPrefixString", default: "")
-    static let exportFilterPostfixString = Key<String>("exportFilterPostfixString", default: "")
-    static let exportStripPathPrefix = Key<Bool>("exportStripPathPrefix", default: false)
-    static let exportStripPathPostfix = Key<Bool>("exportStripPathPostfix", default: false)
+    static let exportPathFlatMode = Key<Bool>("exportPathFlatMode", default: false)
+    static let exportPathFlatDelimiter = Key<String>("exportPathFlatDelimiter", default: ".")
     
+    static let exportFilterPrefixString = Key<String>("exportFilterPrefixString", default: "")
+    static let exportFilterSuffixString = Key<String>("exportFilterSuffixString", default: "")
+    static let exportStripPathPrefix = Key<Bool>("exportStripPathPrefix", default: false)
+    static let exportStripPathSuffix = Key<Bool>("exportStripPathSuffix", default: false)
 }
 
 final class ExportingPreferenceViewController: NSViewController, PreferencePane {
@@ -25,30 +27,43 @@ final class ExportingPreferenceViewController: NSViewController, PreferencePane 
     override var nibName: NSNib.Name? {
         return "ExportingPreferenceViewController"
     }
-        
+    
+    // Flat path export mode
+    
+    @IBOutlet weak var shouldExportFlat: NSButton!
+    @IBOutlet weak var exportFlatDelimiter: NSTextField!
+    
+    // Prefix/Suffix filtering
     @IBOutlet weak var shouldStripPathPrefixCheckbox: NSButton!
-    @IBOutlet weak var shouldStripPathPostfixCheckbox: NSButton!
+    @IBOutlet weak var shouldStripPathSuffixCheckbox: NSButton!
     
     @IBOutlet weak var exportFilterPrefixStringTextField: NSTextField!
-    @IBOutlet weak var exportFilterPostfixStringTextField: NSTextField!
+    @IBOutlet weak var exportFilterSuffixStringTextField: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Defaults[.exportPathFlatMode] {
+            shouldExportFlat.state = .on
+        } else {
+            shouldExportFlat.state = .off
+        }
+        exportFlatDelimiter.stringValue = Defaults[.exportPathFlatDelimiter]
+        
         if Defaults[.exportStripPathPrefix] {
             shouldStripPathPrefixCheckbox.state = .on
         } else {
             shouldStripPathPrefixCheckbox.state = .off
         }
         
-        if Defaults[.exportStripPathPostfix] {
-            shouldStripPathPostfixCheckbox.state = .on
+        if Defaults[.exportStripPathSuffix] {
+            shouldStripPathSuffixCheckbox.state = .on
         } else {
-            shouldStripPathPostfixCheckbox.state = .off
+            shouldStripPathSuffixCheckbox.state = .off
         }
         
         exportFilterPrefixStringTextField.stringValue = Defaults[.exportFilterPrefixString]
-        
-        exportFilterPostfixStringTextField.stringValue = Defaults[.exportFilterPostfixString]
+        exportFilterSuffixStringTextField.stringValue = Defaults[.exportFilterSuffixString]
     }
     
     @IBAction func updatePreferences(_: Any) {
@@ -58,17 +73,23 @@ final class ExportingPreferenceViewController: NSViewController, PreferencePane 
             Defaults[.exportStripPathPrefix] = false
         }
         
-        if shouldStripPathPostfixCheckbox.state == .on {
-            Defaults[.exportStripPathPostfix] = true
+        if shouldStripPathSuffixCheckbox.state == .on {
+            Defaults[.exportStripPathSuffix] = true
         } else {
-            Defaults[.exportStripPathPostfix] = false
+            Defaults[.exportStripPathSuffix] = false
         }
         
         Defaults[.exportFilterPrefixString] = exportFilterPrefixStringTextField.stringValue
         
-        Defaults[.exportFilterPostfixString] = exportFilterPostfixStringTextField.stringValue
+        Defaults[.exportFilterSuffixString] = exportFilterSuffixStringTextField.stringValue
         
         Defaults[.observableDummyKey] = !Defaults[.observableDummyKey]
     }
     
+    @IBAction func enableDisableFlatExport(_ sender: Any) {
+        Defaults[.exportPathFlatMode] = (shouldExportFlat.state == .on)
+    }
+    @IBAction func setFlatExportDelimiter(_ sender: Any) {
+        Defaults[.exportPathFlatDelimiter] = exportFlatDelimiter.stringValue
+    }
 }

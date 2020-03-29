@@ -109,7 +109,7 @@ class ITParsePlaylistFolder: NSObject {
         var allChildrenSelected = true
         
         let startsWith = Defaults[.exportFilterPrefixString]
-        let endsWith = Defaults[.exportFilterPostfixString]
+        let endsWith = Defaults[.exportFilterSuffixString]
         
         for folder in self.folders {
             if folder.getSelectionStatus() == .on {

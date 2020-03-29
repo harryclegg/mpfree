@@ -173,6 +173,24 @@
 			path = mpfreeUITests;
 			sourceTree = "<group>";
 		};
+		4A4162F52430FDB100D85417 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				4AC2969B240988D500C928E2 /* GeneralPreferenceViewController.xib */,
+				4AC296A524098F7B00C928E2 /* GeneralPreferenceViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		4A4162F62430FDBD00D85417 /* Exporting */ = {
+			isa = PBXGroup;
+			children = (
+				4AC296A124098E0A00C928E2 /* ExportingPreferenceViewController.xib */,
+				4AC296A324098F4500C928E2 /* ExportingPreferenceViewController.swift */,
+			);
+			path = Exporting;
+			sourceTree = "<group>";
+		};
 		4AB9473E2399A7DD00A5872A /* ITParse */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,11 +232,9 @@
 		4AC25508240977CD00D37417 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				4AC2969B240988D500C928E2 /* GeneralPreferenceViewController.xib */,
-				4AC296A124098E0A00C928E2 /* ExportingPreferenceViewController.xib */,
+				4A4162F62430FDBD00D85417 /* Exporting */,
+				4A4162F52430FDB100D85417 /* General */,
 				4AC2969F24098B5800C928E2 /* Preferences.swift */,
-				4AC296A324098F4500C928E2 /* ExportingPreferenceViewController.swift */,
-				4AC296A524098F7B00C928E2 /* GeneralPreferenceViewController.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
