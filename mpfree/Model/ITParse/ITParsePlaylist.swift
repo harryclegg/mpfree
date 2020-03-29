@@ -73,13 +73,21 @@ class ITParsePlaylist : NSObject {
         }
     }
     
-    func getOutputName(shouldRemovePrefix: Bool, prefixToRemove: String) -> String {
+    func generateExportPath() -> String {
         var p = self.parent
         var outputName: String = name
         
+        let shouldRemovePrefix = Defaults[.exportStripPathPrefix]
+        let shouldRemoveSuffix = Defaults[.exportStripPathSuffix]
+        let startsWith = Defaults[.exportFilterPrefixString]
+        let endsWith = Defaults[.exportFilterPostfixString]
+        
         // Remove prefix if supposed to.
         if shouldRemovePrefix {
-            outputName = outputName.deletePrefix(prefixToRemove)
+            outputName = outputName.deletePrefix(startsWith)
+        }
+        if shouldRemoveSuffix {
+            outputName = outputName.deleteSuffix(endsWith)
         }
         
         // Build name path by recursing up the playlist tree.
@@ -96,5 +104,9 @@ extension String {
     func deletePrefix(_ prefix: String) -> String {
         guard self.hasPrefix(prefix) else { return self }
         return String(self.dropFirst(prefix.count))
+    }
+    func deleteSuffix(_ suffix: String) -> String {
+        guard self.hasSuffix(suffix) else { return self }
+        return String(self.dropLast(suffix.count))
     }
 }

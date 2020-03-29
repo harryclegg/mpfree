@@ -14,8 +14,7 @@ extension Defaults.Keys {
     static let exportFilterPrefixString = Key<String>("exportFilterPrefixString", default: "")
     static let exportFilterPostfixString = Key<String>("exportFilterPostfixString", default: "")
     static let exportStripPathPrefix = Key<Bool>("exportStripPathPrefix", default: false)
-    static let exportStripPathPostfix = Key<Bool>("exportStripPathPostfix", default: false)
-    
+    static let exportStripPathSuffix = Key<Bool>("exportStripPathSuffix", default: false)
 }
 
 final class ExportingPreferenceViewController: NSViewController, PreferencePane {
@@ -40,7 +39,7 @@ final class ExportingPreferenceViewController: NSViewController, PreferencePane 
             shouldStripPathPrefixCheckbox.state = .off
         }
         
-        if Defaults[.exportStripPathPostfix] {
+        if Defaults[.exportStripPathSuffix] {
             shouldStripPathPostfixCheckbox.state = .on
         } else {
             shouldStripPathPostfixCheckbox.state = .off
@@ -59,9 +58,9 @@ final class ExportingPreferenceViewController: NSViewController, PreferencePane 
         }
         
         if shouldStripPathPostfixCheckbox.state == .on {
-            Defaults[.exportStripPathPostfix] = true
+            Defaults[.exportStripPathSuffix] = true
         } else {
-            Defaults[.exportStripPathPostfix] = false
+            Defaults[.exportStripPathSuffix] = false
         }
         
         Defaults[.exportFilterPrefixString] = exportFilterPrefixStringTextField.stringValue
