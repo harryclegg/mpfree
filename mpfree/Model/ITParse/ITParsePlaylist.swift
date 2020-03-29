@@ -43,7 +43,7 @@ class ITParsePlaylist : NSObject {
     func shouldBeFiltered() -> Bool {
         // Grabs the current start and end strings from persistent data then calls the filter function with those.
         let startsWith = Defaults[.exportFilterPrefixString]
-        let endsWith = Defaults[.exportFilterPostfixString]
+        let endsWith = Defaults[.exportFilterSuffixString]
         return shouldBeFiltered(startsWith: startsWith, endsWith: endsWith)
     }
     
@@ -55,7 +55,7 @@ class ITParsePlaylist : NSObject {
     func isSelected() -> Bool {
         // Grabs the current start and end strings from persistent data then calls the selection function with those.
         let startsWith = Defaults[.exportFilterPrefixString]
-        let endsWith = Defaults[.exportFilterPostfixString]
+        let endsWith = Defaults[.exportFilterSuffixString]
         return isSelected(startsWith: startsWith, endsWith: endsWith)
     }
     
@@ -73,18 +73,34 @@ class ITParsePlaylist : NSObject {
         }
     }
     
-    func getOutputName(shouldRemovePrefix: Bool, prefixToRemove: String) -> String {
+    func generateExportPath() -> String {
         var p = self.parent
         var outputName: String = name
+        var delimiter: String = ""
+        
+        let shouldRemovePrefix = Defaults[.exportStripPathPrefix]
+        let shouldRemoveSuffix = Defaults[.exportStripPathSuffix]
+        let startsWith = Defaults[.exportFilterPrefixString]
+        let endsWith = Defaults[.exportFilterSuffixString]
         
         // Remove prefix if supposed to.
         if shouldRemovePrefix {
-            outputName = outputName.deletePrefix(prefixToRemove)
+            outputName = outputName.deletePrefix(startsWith)
+        }
+        if shouldRemoveSuffix {
+            outputName = outputName.deleteSuffix(endsWith)
+        }
+        
+        // Get correct delimiter state.
+        if Defaults[.exportPathFlatMode] {
+            delimiter = Defaults[.exportPathFlatDelimiter]
+        } else {
+            delimiter = "/"
         }
         
         // Build name path by recursing up the playlist tree.
         while !(p.isTarget) {
-            outputName = (p.name+"."+outputName)
+            outputName = (p.name+delimiter+outputName)
             p = p.parent!
         }
         return outputName
@@ -96,5 +112,9 @@ extension String {
     func deletePrefix(_ prefix: String) -> String {
         guard self.hasPrefix(prefix) else { return self }
         return String(self.dropFirst(prefix.count))
+    }
+    func deleteSuffix(_ suffix: String) -> String {
+        guard self.hasSuffix(suffix) else { return self }
+        return String(self.dropLast(suffix.count))
     }
 }

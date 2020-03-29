@@ -42,17 +42,17 @@ class PlaylistTableViewController: NSViewController {
     var startsWith = ""
     var endsWith = ""
     var shouldRemovePrefix = false
-    var shouldRemovePostfix = false
+    var shouldRemoveSuffix = false
     
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         startsWith = Defaults[.exportFilterPrefixString]
-        endsWith = Defaults[.exportFilterPostfixString]
+        endsWith = Defaults[.exportFilterSuffixString]
         
         shouldRemovePrefix = Defaults[.exportStripPathPrefix]
-        shouldRemovePostfix = Defaults[.exportStripPathPostfix]
+        shouldRemoveSuffix = Defaults[.exportStripPathSuffix]
         
         /// Do any additional setup after loading the view.
         print("mpfree: Loaded view.")
@@ -173,7 +173,7 @@ extension PlaylistTableViewController: NSOutlineViewDataSource, NSOutlineViewDel
             
         case .outputName:
             if let playlist = item as? ITParsePlaylist {
-                text = String(playlist.getOutputName(shouldRemovePrefix: shouldRemovePrefix, prefixToRemove: startsWith))
+                text = String(playlist.generateExportPath())
             }
             
             let view = outlineView.makeView(withIdentifier: .outputName, owner: self) as? NSTableCellView

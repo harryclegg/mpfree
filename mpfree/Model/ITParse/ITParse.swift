@@ -98,7 +98,7 @@ class ITParse {
         if selectedOnly {
             
             let startsWith = Defaults[.exportFilterPrefixString]
-            let endsWith = Defaults[.exportFilterPostfixString]
+            let endsWith = Defaults[.exportFilterSuffixString]
 
             allPlaylists = allPlaylists.filter({$0.isSelected(startsWith: startsWith, endsWith: endsWith)})
         }
@@ -118,7 +118,7 @@ class ITParse {
         let targetPlaylists = self.findAllPlaylists(topFolder: self.targetTree, selectedOnly: true)
         
         for playlist in targetPlaylists {
-            guard let destFolderURL = exportURL.createAndChangeToFolder(playlist.getOutputName(shouldRemovePrefix: false, prefixToRemove: "")) else {
+            guard let destFolderURL = exportURL.createAndChangeToFolder(playlist.generateExportPath()) else {
                 continue
             }
             let playlistItems = playlist.asPlaylist.items
