@@ -13,6 +13,12 @@ import Defaults
 
 import OutcastID3
 
+enum SelectionState: Int {
+    case userDeSelected = 0
+    case setFromFilters = 1
+    case userSelected = 2
+}
+
 class ITParse {
     
     // Store the iTunes library object.
@@ -21,6 +27,8 @@ class ITParse {
     
     private(set) var rootTree: ITParsePlaylistFolder!
     private(set) var targetTree: ITParsePlaylistFolder!
+    
+    private(set) var tableView: PlaylistTableViewController?
     
     init() {
         
@@ -40,6 +48,15 @@ class ITParse {
         playlists = playlists.filter({!$0.isMaster})
         playlists = playlists.filter({$0.distinguishedKind == ITLibDistinguishedPlaylistKind.kindNone})
         self.playlists = playlists
+    }
+    
+    func setView(tableView: PlaylistTableViewController) {
+        self.tableView = tableView
+    }
+    
+    func redrawTree() {
+        self.tableView!.reloadData()
+        
     }
     
     func generateRootTree(initialRootFolderID: UInt64) {

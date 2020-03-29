@@ -140,11 +140,11 @@ class ITParsePlaylistFolder: NSObject {
         
     }
     
-    func setSelection(_ isSelected: Bool) {
-        self.folders.forEach { $0.setSelection(isSelected) }
-        self.playlists.forEach { $0.setSelection(isSelected) }
+    func setSelection(_ newState: SelectionState) {
+        // Pass new selection state down to child playlist folders and child playlists.
+        self.folders.forEach { $0.setSelection(newState) }
+        self.playlists.forEach { $0.setSelection(newState) }
     }
-    
     
     
 }
