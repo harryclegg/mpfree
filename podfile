@@ -1,0 +1,5 @@
+target 'mpfree' do
+  pod 'Preferences'
+  pod 'Defaults'  
+  pod 'OutcastID3', '~> 0.6'
+end
