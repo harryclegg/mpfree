@@ -76,6 +76,7 @@ class ITParsePlaylist : NSObject {
     func generateExportPath() -> String {
         var p = self.parent
         var outputName: String = name
+        var delimiter: String = ""
         
         let shouldRemovePrefix = Defaults[.exportStripPathPrefix]
         let shouldRemoveSuffix = Defaults[.exportStripPathSuffix]
@@ -90,9 +91,16 @@ class ITParsePlaylist : NSObject {
             outputName = outputName.deleteSuffix(endsWith)
         }
         
+        // Get correct delimiter state.
+        if Defaults[.exportPathFlatMode] {
+            delimiter = Defaults[.exportPathFlatDelimiter]
+        } else {
+            delimiter = "/"
+        }
+        
         // Build name path by recursing up the playlist tree.
         while !(p.isTarget) {
-            outputName = (p.name+"."+outputName)
+            outputName = (p.name+delimiter+outputName)
             p = p.parent!
         }
         return outputName

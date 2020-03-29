@@ -11,6 +11,9 @@ import Defaults
 import Preferences
 
 extension Defaults.Keys {
+    static let exportPathFlatMode = Key<Bool>("exportPathFlatMode", default: false)
+    static let exportPathFlatDelimiter = Key<String>("exportPathFlatDelimiter", default: ".")
+    
     static let exportFilterPrefixString = Key<String>("exportFilterPrefixString", default: "")
     static let exportFilterSuffixString = Key<String>("exportFilterSuffixString", default: "")
     static let exportStripPathPrefix = Key<Bool>("exportStripPathPrefix", default: false)
@@ -24,7 +27,13 @@ final class ExportingPreferenceViewController: NSViewController, PreferencePane 
     override var nibName: NSNib.Name? {
         return "ExportingPreferenceViewController"
     }
-        
+    
+    // Flat path export mode
+    
+    @IBOutlet weak var shouldExportFlat: NSButton!
+    @IBOutlet weak var exportFlatDelimiter: NSTextField!
+    
+    // Prefix/Suffix filtering
     @IBOutlet weak var shouldStripPathPrefixCheckbox: NSButton!
     @IBOutlet weak var shouldStripPathSuffixCheckbox: NSButton!
     
@@ -33,6 +42,14 @@ final class ExportingPreferenceViewController: NSViewController, PreferencePane 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Defaults[.exportPathFlatMode] {
+            shouldExportFlat.state = .on
+        } else {
+            shouldExportFlat.state = .off
+        }
+        exportFlatDelimiter.stringValue = Defaults[.exportPathFlatDelimiter]
+        
         if Defaults[.exportStripPathPrefix] {
             shouldStripPathPrefixCheckbox.state = .on
         } else {
@@ -69,4 +86,10 @@ final class ExportingPreferenceViewController: NSViewController, PreferencePane 
         Defaults[.observableDummyKey] = !Defaults[.observableDummyKey]
     }
     
+    @IBAction func enableDisableFlatExport(_ sender: Any) {
+        Defaults[.exportPathFlatMode] = (shouldExportFlat.state == .on)
+    }
+    @IBAction func setFlatExportDelimiter(_ sender: Any) {
+        Defaults[.exportPathFlatDelimiter] = exportFlatDelimiter.stringValue
+    }
 }
