@@ -1,24 +1,20 @@
 PODS:
   - Defaults (3.1.1)
-  - OutcastID3 (0.6.5)
   - Preferences (1.0.1)
 
 DEPENDENCIES:
   - Defaults
-  - OutcastID3 (~> 0.6)
   - Preferences
 
 SPEC REPOS:
   trunk:
     - Defaults
-    - OutcastID3
     - Preferences
 
 SPEC CHECKSUMS:
   Defaults: bcfbdb87d0b63fb302d70791b72f62f0f29d26aa
-  OutcastID3: 5c0132dc6c1a8c73b7959c28d0b9795d42249341
   Preferences: a5afbe0ae3e6bd886328b1960f4998e65d58f2c4
 
-PODFILE CHECKSUM: e2a15a8d8d0c7816556559587087804c0a2a96e6
+PODFILE CHECKSUM: d57e8efe50162ee0da7e414415b26f51550a2c02
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3
