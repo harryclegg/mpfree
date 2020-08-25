@@ -11,12 +11,16 @@ import iTunesLibrary
 import Foundation
 import Defaults
 
-import OutcastID3
-
 enum SelectionState: Int {
     case userDeSelected = 0
     case setFromFilters = 1
     case userSelected = 2
+}
+
+struct ItemMetadata {
+    var title: String
+    var artist: String
+    var BPM: Int
 }
 
 class ITParse {
@@ -126,35 +130,30 @@ class ITParse {
             var itemCount = 1
             
             for item in playlistItems {
-                if let location = item.location {
-                    self.exportItem(itemCount: itemCount, itemURL: location, exportURL: destFolderURL)
-                }
+                self.exportItem(itemCount: itemCount, item: item, exportURL: destFolderURL)
                 itemCount += 1
             }
             
         }
     }
     
-    func exportItem(itemCount: Int, itemURL: URL, exportURL: URL) {
-        var frameValues: [String: String]
+    func exportItem(itemCount: Int, item: ITLibMediaItem, exportURL: URL) {
+        // Export an iTunes media item to the desired export URL.
         
-        do {
-            // Try to read the tag.
-            let x = try OutcastID3.MP3File(localUrl: itemURL)
-            let tag = try x.readID3Tag()
-            
-            frameValues = getDesiredFrames(tag: tag.tag, desiredFrames: ["TIT2", "TALB", "TPE1", "TBPM", "TKEY"])
-        } catch {
-            debugPrint(error)
+        // Get track metadata.
+        let metadata = getItemMetadata(item: item)
+        
+        // Try and grab the URL of the track.
+        guard let itemLocation = item.location else {
             return
         }
-        
 
-        
         do {
-            let fileName = String(format: "%02d-%@-%@.mp3", itemCount, ITParse.extractTag(frameValues, "TIT2"), ITParse.extractTag(frameValues, "TPE1"))
+            // Format output paths.
+            let fileName = String(format: "%02d-%@-%@.%@", itemCount, metadata.title, metadata.artist, itemLocation.pathExtension)
             let destPath = String(format: "%@/%@", exportURL.path, fileName)
             
+            // Try and delete if file with same name already exists.
             if FileManager.default.fileExists(atPath: destPath){
                 do {
                     try FileManager.default.removeItem(atPath: destPath)
@@ -164,7 +163,8 @@ class ITParse {
                 }
             }
             
-            try FileManager.default.copyItem(atPath: itemURL.path, toPath: destPath)
+            // Try to copy the item from source to dest.
+            try FileManager.default.copyItem(atPath: itemLocation.path, toPath: destPath)
             
         } catch {
             debugPrint(error)
@@ -172,71 +172,15 @@ class ITParse {
         }
     }
     
-    static func extractTag(_ frameValues: [String: String], _ targetKey: String) -> String {
-        var extractedTag = (frameValues[targetKey] ?? "_")
-        extractedTag.removingRegexMatches(pattern: "[^A-Za-z0-9 \\_\\-(\\)\\[\\]]+", replaceWith: "_")
-        return extractedTag
+    func getItemMetadata(item: ITLibMediaItem) -> ItemMetadata {
+        // Extract the metadata required to form the output file name from the iTunes item.
+        
+        // Unwrap the artist from the item, requrires default.
+        let artist = item.artist?.name ?? "UNKNOWN"
+        
+        // Grab the obvious ones directly.
+        return ItemMetadata(title: item.title, artist: artist, BPM: item.beatsPerMinute)
     }
-    
-    func getDesiredFrames(tag: OutcastID3.ID3Tag, desiredFrames: [String]) -> [String: String] {
-        
-        let debugPrintTags = Defaults[.debugPrintTags]
-        
-        var frameDictionary = desiredFrames.reduce(into: [String: String]()) { $0[$1] = "" }
-        
-        for frame in tag.frames {
-            switch frame {
-            case let s as OutcastID3.Frame.StringFrame:
-                let k = s.type.rawValue
-                if frameDictionary[k] != nil {
-                    frameDictionary[k] = s.str
-                }
-                if debugPrintTags {
-                    print("\(s.type.description): \(s.str)")
-                }
-            default:
-                break
-            }
-        }
-        
-        return frameDictionary
-    }
-    
-    func outputTag(tag: OutcastID3.ID3Tag) {
-        for frame in tag.frames {
-            switch frame {
-            case let s as OutcastID3.Frame.StringFrame:
-                print("\(s.type.description): \(s.str)")
-                
-            case let u as OutcastID3.Frame.UrlFrame:
-                print("\(u.type.description): \(u.urlString)")
-                
-            case let comment as OutcastID3.Frame.CommentFrame:
-                print("COMMENT: \(comment)")
-                
-            case let transcription as OutcastID3.Frame.TranscriptionFrame:
-                print("TRANSCRIPTION: \(transcription)")
-                
-            case let picture as OutcastID3.Frame.PictureFrame:
-                print("PICTURE: \(picture)")
-                
-            case let f as OutcastID3.Frame.ChapterFrame:
-                print("CHAPTER: \(f)")
-                
-            case let toc as OutcastID3.Frame.TableOfContentsFrame:
-                print("TOC: \(toc)")
-                
-            case let rawFrame as OutcastID3.Frame.RawFrame:
-                print("Unrecognised frame: \(String(describing: rawFrame.frameIdentifier))")
-                
-            default:
-                break
-            }
-        }
-    }
-    
-    
-    
     
 }
 
