@@ -1,4 +1,0 @@
-target 'mpfree' do
-  pod 'Preferences'
-  pod 'Defaults'  
-end

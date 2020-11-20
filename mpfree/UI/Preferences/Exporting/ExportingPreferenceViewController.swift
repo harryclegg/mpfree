@@ -13,6 +13,7 @@ import Preferences
 extension Defaults.Keys {
     static let exportPathFlatMode = Key<Bool>("exportPathFlatMode", default: false)
     static let exportPathFlatDelimiter = Key<String>("exportPathFlatDelimiter", default: ".")
+    static let exportConvertOnExport = Key<Bool>("exportConvertToMP3", default: false)
 }
 
 final class ExportingPreferenceViewController: NSViewController, PreferencePane {
@@ -28,6 +29,8 @@ final class ExportingPreferenceViewController: NSViewController, PreferencePane 
     @IBOutlet weak var shouldExportFlat: NSButton!
     @IBOutlet weak var exportFlatDelimiter: NSTextField!
     @IBOutlet weak var exportFlatDelimiterLabel: NSTextField!
+    @IBOutlet weak var shouldConvertOnExport: NSButton!
+    
     
     public override var preferredContentSize: CGSize {
         get { return CGSize(width: 445, height: 315) }
@@ -47,6 +50,12 @@ final class ExportingPreferenceViewController: NSViewController, PreferencePane 
             exportFlatDelimiter.isEnabled = false
         }
         
+        if Defaults[.exportConvertOnExport] {
+            shouldConvertOnExport.state = .on
+        } else {
+            shouldConvertOnExport.state = .off
+        }
+        
         exportFlatDelimiter.stringValue = Defaults[.exportPathFlatDelimiter]
     }
     
@@ -63,5 +72,9 @@ final class ExportingPreferenceViewController: NSViewController, PreferencePane 
     
     @IBAction func setFlatExportDelimiter(_ sender: Any) {
         Defaults[.exportPathFlatDelimiter] = exportFlatDelimiter.stringValue
+    }
+    
+    @IBAction func enableDisableConvertOnExport(_ sender: Any) {
+        Defaults[.exportConvertOnExport] = (shouldConvertOnExport.state == .on)
     }
 }
