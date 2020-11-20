@@ -23,7 +23,6 @@
 		4AC296A424098F4500C928E2 /* ExportingPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC296A324098F4500C928E2 /* ExportingPreferenceViewController.swift */; };
 		4AC296A624098F7B00C928E2 /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC296A524098F7B00C928E2 /* GeneralPreferenceViewController.swift */; };
 		4AD0F1322388AF1200F9CB75 /* ITParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0F1312388AF1200F9CB75 /* ITParse.swift */; };
-		DDEECE93712E4B3B34EDF79B /* libPods-mpfree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEABC154F308447E747081E5 /* libPods-mpfree.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,9 +79,6 @@
 		4AC296A324098F4500C928E2 /* ExportingPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportingPreferenceViewController.swift; sourceTree = "<group>"; };
 		4AC296A524098F7B00C928E2 /* GeneralPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferenceViewController.swift; sourceTree = "<group>"; };
 		4AD0F1312388AF1200F9CB75 /* ITParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITParse.swift; sourceTree = "<group>"; };
-		81357C5FAA8E4B60B0C98E5A /* Pods-mpfree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpfree.release.xcconfig"; path = "Target Support Files/Pods-mpfree/Pods-mpfree.release.xcconfig"; sourceTree = "<group>"; };
-		D021FF900F60AB01E2ED8AA6 /* Pods-mpfree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpfree.debug.xcconfig"; path = "Target Support Files/Pods-mpfree/Pods-mpfree.debug.xcconfig"; sourceTree = "<group>"; };
-		DEABC154F308447E747081E5 /* libPods-mpfree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mpfree.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDEECE93712E4B3B34EDF79B /* libPods-mpfree.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,15 +106,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		081E12F738DF4483308E8482 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D021FF900F60AB01E2ED8AA6 /* Pods-mpfree.debug.xcconfig */,
-				81357C5FAA8E4B60B0C98E5A /* Pods-mpfree.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		4A2AF5C323889BC3000A7EB6 = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +114,6 @@
 				4A2AF5EC23889BC4000A7EB6 /* mpfreeUITests */,
 				4A2AF5CD23889BC3000A7EB6 /* Products */,
 				4AB94770239AB76700A5872A /* Frameworks */,
-				081E12F738DF4483308E8482 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,7 +200,6 @@
 		4AB94770239AB76700A5872A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DEABC154F308447E747081E5 /* libPods-mpfree.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -254,7 +238,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A2AF5F223889BC4000A7EB6 /* Build configuration list for PBXNativeTarget "mpfree" */;
 			buildPhases = (
-				241FE6EB09500C90DFD64743 /* [CP] Check Pods Manifest.lock */,
 				4A2AF5C823889BC3000A7EB6 /* Sources */,
 				4A2AF5C923889BC3000A7EB6 /* Frameworks */,
 				4A2AF5CA23889BC3000A7EB6 /* Resources */,
@@ -375,31 +358,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		241FE6EB09500C90DFD64743 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mpfree-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4A2AF5C823889BC3000A7EB6 /* Sources */ = {
@@ -577,7 +535,6 @@
 		};
 		4A2AF5F323889BC4000A7EB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D021FF900F60AB01E2ED8AA6 /* Pods-mpfree.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mpfree/mpfree.entitlements;
@@ -600,7 +557,6 @@
 		};
 		4A2AF5F423889BC4000A7EB6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81357C5FAA8E4B60B0C98E5A /* Pods-mpfree.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mpfree/mpfree.entitlements;
