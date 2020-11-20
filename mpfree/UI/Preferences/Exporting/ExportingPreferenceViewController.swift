@@ -17,7 +17,7 @@ extension Defaults.Keys {
 }
 
 final class ExportingPreferenceViewController: NSViewController, PreferencePane {
-    let preferencePaneIdentifier = PreferencePane.Identifier.exporting
+    let preferencePaneIdentifier = Preferences.PaneIdentifier.exporting
     let preferencePaneTitle = "Export"
     
     override var nibName: NSNib.Name? {

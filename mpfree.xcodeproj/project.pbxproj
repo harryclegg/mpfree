@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,8 @@
 		4AC296A224098E0A00C928E2 /* ExportingPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC296A124098E0A00C928E2 /* ExportingPreferenceViewController.xib */; };
 		4AC296A424098F4500C928E2 /* ExportingPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC296A324098F4500C928E2 /* ExportingPreferenceViewController.swift */; };
 		4AC296A624098F7B00C928E2 /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC296A524098F7B00C928E2 /* GeneralPreferenceViewController.swift */; };
+		4AC5D33B25686C7000841536 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 4AC5D33A25686C7000841536 /* Preferences */; };
+		4AC5D34025686C7800841536 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 4AC5D33F25686C7800841536 /* Defaults */; };
 		4AD0F1322388AF1200F9CB75 /* ITParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0F1312388AF1200F9CB75 /* ITParse.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AC5D34025686C7800841536 /* Defaults in Frameworks */,
+				4AC5D33B25686C7000841536 /* Preferences in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +252,10 @@
 			dependencies = (
 			);
 			name = mpfree;
+			packageProductDependencies = (
+				4AC5D33A25686C7000841536 /* Preferences */,
+				4AC5D33F25686C7800841536 /* Defaults */,
+			);
 			productName = mpfree;
 			productReference = 4A2AF5CC23889BC3000A7EB6 /* mpfree.app */;
 			productType = "com.apple.product-type.application";
@@ -320,6 +328,10 @@
 				Base,
 			);
 			mainGroup = 4A2AF5C323889BC3000A7EB6;
+			packageReferences = (
+				4AC5D33925686C7000841536 /* XCRemoteSwiftPackageReference "Preferences" */,
+				4AC5D33E25686C7800841536 /* XCRemoteSwiftPackageReference "Defaults" */,
+			);
 			productRefGroup = 4A2AF5CD23889BC3000A7EB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -697,6 +709,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4AC5D33925686C7000841536 /* XCRemoteSwiftPackageReference "Preferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Preferences";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+		4AC5D33E25686C7800841536 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4AC5D33A25686C7000841536 /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AC5D33925686C7000841536 /* XCRemoteSwiftPackageReference "Preferences" */;
+			productName = Preferences;
+		};
+		4AC5D33F25686C7800841536 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AC5D33E25686C7800841536 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A2AF5C423889BC3000A7EB6 /* Project object */;
 }
