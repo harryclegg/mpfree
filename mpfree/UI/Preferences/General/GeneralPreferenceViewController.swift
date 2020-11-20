@@ -19,7 +19,7 @@ extension Defaults.Keys {
 
 
 final class GeneralPreferenceViewController: NSViewController, PreferencePane {
-    let preferencePaneIdentifier = PreferencePane.Identifier.general
+    let preferencePaneIdentifier = Preferences.PaneIdentifier.general
     let preferencePaneTitle = "General"
     
     // Prefix/Suffix filtering
