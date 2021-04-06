@@ -104,7 +104,7 @@ class ITParsePlaylistFolder: NSObject {
         }
     }
     
-    func getSelectionStatus() -> NSControl.StateValue {
+    var getSelectionStatus : NSControl.StateValue {
         var anyChildrenSelected = false
         var allChildrenSelected = true
         
@@ -112,7 +112,7 @@ class ITParsePlaylistFolder: NSObject {
         let endsWith = Defaults[.exportFilterSuffixString]
         
         for folder in self.folders {
-            if folder.getSelectionStatus() == .on {
+            if folder.getSelectionStatus == .on {
                 anyChildrenSelected = true
             } else {
                 allChildrenSelected = false
@@ -138,6 +138,20 @@ class ITParsePlaylistFolder: NSObject {
             return .off
         }
         
+    }
+    
+    var anyFilteredChildren : Bool {
+        
+        let startsWith = Defaults[.exportFilterPrefixString]
+        let endsWith = Defaults[.exportFilterSuffixString]
+        
+        for playlist in self.playlists {
+
+            if playlist.isSelected(startsWith: startsWith, endsWith: endsWith) {
+                return true
+            }
+        }
+        return false
     }
     
     func setSelection(_ newState: SelectionState) {

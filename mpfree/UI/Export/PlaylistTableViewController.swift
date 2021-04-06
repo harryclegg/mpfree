@@ -138,9 +138,9 @@ extension PlaylistTableViewController: NSOutlineViewDataSource, NSOutlineViewDel
                 view.checkboxButton.allowsMixedState = false
                 
             case let folder as ITParsePlaylistFolder:
-                cell.checkboxButton.title = folder.name
-                cell.checkboxButton.state = folder.getSelectionStatus()
-                cell.checkboxButton.allowsMixedState = true
+                view.checkboxButton.title = folder.name
+                view.checkboxButton.state = folder.getSelectionStatus
+                view.checkboxButton.allowsMixedState = folder.anyFilteredChildren
                 
             default: break
             }
