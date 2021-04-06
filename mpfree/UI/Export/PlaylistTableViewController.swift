@@ -151,12 +151,19 @@ extension PlaylistTableViewController: NSOutlineViewDataSource, NSOutlineViewDel
             return view
             
         case .trackCount:
-            if let playlist = item as? ITParsePlaylist {
-                text = String(playlist.nTracks)
+            let view = outlineView.makeView(withIdentifier: column.cellIdentifier, owner: self) as? NSTableCellView
+            
+            switch(item) {
+                
+            case let playlist as ITParsePlaylist:
+                view?.textField?.stringValue = "\(playlist.totalItemCount)"
+
+            case let folder as ITParsePlaylistFolder:
+                view?.textField?.stringValue = "\(folder.totalItemCount)"
+
+            default: break
             }
             
-            let view = outlineView.makeView(withIdentifier: .trackCount, owner: self) as? NSTableCellView
-            view?.textField?.stringValue = text
             return view
             
         case .outputPath:

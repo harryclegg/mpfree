@@ -106,6 +106,10 @@ class ITParsePlaylist : NSObject {
         return outputName
     }
     
+    var totalItemCount : Int {
+        return self.asPlaylist.items.count
+    }
+    
 }
 
 extension String {

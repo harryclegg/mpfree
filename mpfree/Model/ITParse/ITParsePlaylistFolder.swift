@@ -146,5 +146,10 @@ class ITParsePlaylistFolder: NSObject {
         self.playlists.forEach { $0.setSelection(newState) }
     }
     
+    var totalItemCount : Int {
+        let playlistCount = self.playlists.map({$0.totalItemCount}).reduce(0, +)
+        let subFolderCount = self.folders.map({$0.totalItemCount}).reduce(0, +)
+        return playlistCount + subFolderCount
+    }
     
 }
