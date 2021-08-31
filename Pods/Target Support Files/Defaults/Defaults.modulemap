@@ -1,6 +1,0 @@
-module Defaults {
-  umbrella header "Defaults-umbrella.h"
-
-  export *
-  module * { export * }
-}

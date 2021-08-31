@@ -142,32 +142,43 @@ class ITParse {
         
         // Get track metadata.
         let metadata = getItemMetadata(item: item)
-        
+                
         // Try and grab the URL of the track.
         guard let itemLocation = item.location else {
             return
         }
-
+                
         do {
             // Format output paths.
-            let fileName = String(format: "%02d-%@-%@.%@", itemCount, metadata.title, metadata.artist, itemLocation.pathExtension)
+            let fileName = String(format: "%02d - %@ - %@.%@", itemCount, metadata.title, metadata.artist, itemLocation.pathExtension)
             let destPath = String(format: "%@/%@", exportURL.path, fileName)
             
             // Try and delete if file with same name already exists.
             if FileManager.default.fileExists(atPath: destPath){
                 do {
+                    debugPrint("mpfree: rm [\(destPath)]")
                     try FileManager.default.removeItem(atPath: destPath)
                 } catch {
-                    debugPrint(error)
+                    print(error)
                     return
                 }
             }
             
+            // Try to make a new folder at the export folder path.
+            if let v = try? exportURL.resourceValues(forKeys: [.isDirectoryKey]) {
+                if !v.isDirectory! {
+                    debugPrint("mpfree: mkdir [\(exportURL.absoluteString)]")
+                    try FileManager.default.createDirectory(atPath: exportURL.absoluteString, withIntermediateDirectories: true)
+                }
+            }
+            
             // Try to copy the item from source to dest.
+            debugPrint("mpfree: cp: [\(itemLocation.path) --> \(destPath)]")
+            
             try FileManager.default.copyItem(atPath: itemLocation.path, toPath: destPath)
             
         } catch {
-            debugPrint(error)
+            debugPrint(error.localizedDescription)
             return
         }
     }

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -10,6 +9,7 @@
             <connections>
                 <outlet property="exportFlatDelimiter" destination="EaW-Gc-W6H" id="zxe-0h-JKY"/>
                 <outlet property="exportFlatDelimiterLabel" destination="b8N-4k-HkD" id="V6e-zc-Dvt"/>
+                <outlet property="shouldConvertOnExport" destination="cLz-mN-EU1" id="5lq-o1-AeL"/>
                 <outlet property="shouldExportFlat" destination="Edf-dN-caa" id="taB-u2-EKV"/>
                 <outlet property="view" destination="c22-O7-iKe" id="ZQe-UH-LCX"/>
             </connections>
@@ -61,6 +61,26 @@
                         <action selector="setFlatExportDelimiter:" target="-2" id="JSL-UA-M5S"/>
                     </connections>
                 </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xIL-FO-EhN">
+                    <rect key="frame" x="18" y="166" width="116" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="File Conversion" id="mhK-Nl-suW">
+                        <font key="font" metaFont="systemBold" size="15"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cLz-mN-EU1">
+                    <rect key="frame" x="18" y="142" width="408" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Convert any non-mp3 files to mp3 upon export (requires LAME)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="jFd-hs-F5d">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="enableDisableConvertOnExport:" target="-2" id="NSl-iJ-XbF"/>
+                    </connections>
+                </button>
             </subviews>
             <point key="canvasLocation" x="-173.5" y="3.5"/>
         </customView>

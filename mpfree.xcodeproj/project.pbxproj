@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,8 +11,6 @@
 		4A2AF5D223889BC3000A7EB6 /* PlaylistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AF5D123889BC3000A7EB6 /* PlaylistTableViewController.swift */; };
 		4A2AF5D423889BC4000A7EB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A2AF5D323889BC4000A7EB6 /* Assets.xcassets */; };
 		4A2AF5D723889BC4000A7EB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2AF5D523889BC4000A7EB6 /* Main.storyboard */; };
-		4A2AF5E323889BC4000A7EB6 /* mpfreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AF5E223889BC4000A7EB6 /* mpfreeTests.swift */; };
-		4A2AF5EE23889BC4000A7EB6 /* mpfreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AF5ED23889BC4000A7EB6 /* mpfreeUITests.swift */; };
 		4A867BA423CA211C005D88BA /* CheckboxCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A867BA323CA211C005D88BA /* CheckboxCellView.swift */; };
 		4AB9473923971B9200A5872A /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB9473823971B9200A5872A /* WindowController.swift */; };
 		4AB9473B2399A72800A5872A /* ITParsePlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB9473A2399A72800A5872A /* ITParsePlaylist.swift */; };
@@ -22,8 +20,9 @@
 		4AC296A224098E0A00C928E2 /* ExportingPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC296A124098E0A00C928E2 /* ExportingPreferenceViewController.xib */; };
 		4AC296A424098F4500C928E2 /* ExportingPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC296A324098F4500C928E2 /* ExportingPreferenceViewController.swift */; };
 		4AC296A624098F7B00C928E2 /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC296A524098F7B00C928E2 /* GeneralPreferenceViewController.swift */; };
+		4AC5D33B25686C7000841536 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 4AC5D33A25686C7000841536 /* Preferences */; };
+		4AC5D34025686C7800841536 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 4AC5D33F25686C7800841536 /* Defaults */; };
 		4AD0F1322388AF1200F9CB75 /* ITParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0F1312388AF1200F9CB75 /* ITParse.swift */; };
-		DDEECE93712E4B3B34EDF79B /* libPods-mpfree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEABC154F308447E747081E5 /* libPods-mpfree.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,11 +64,7 @@
 		4A2AF5D823889BC4000A7EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A2AF5D923889BC4000A7EB6 /* mpfree.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mpfree.entitlements; sourceTree = "<group>"; };
 		4A2AF5DE23889BC4000A7EB6 /* mpfreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mpfreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A2AF5E223889BC4000A7EB6 /* mpfreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mpfreeTests.swift; sourceTree = "<group>"; };
-		4A2AF5E423889BC4000A7EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A2AF5E923889BC4000A7EB6 /* mpfreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mpfreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A2AF5ED23889BC4000A7EB6 /* mpfreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mpfreeUITests.swift; sourceTree = "<group>"; };
-		4A2AF5EF23889BC4000A7EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A867BA323CA211C005D88BA /* CheckboxCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCellView.swift; sourceTree = "<group>"; };
 		4AB9473823971B9200A5872A /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		4AB9473A2399A72800A5872A /* ITParsePlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITParsePlaylist.swift; sourceTree = "<group>"; };
@@ -80,9 +75,6 @@
 		4AC296A324098F4500C928E2 /* ExportingPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportingPreferenceViewController.swift; sourceTree = "<group>"; };
 		4AC296A524098F7B00C928E2 /* GeneralPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferenceViewController.swift; sourceTree = "<group>"; };
 		4AD0F1312388AF1200F9CB75 /* ITParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITParse.swift; sourceTree = "<group>"; };
-		81357C5FAA8E4B60B0C98E5A /* Pods-mpfree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpfree.release.xcconfig"; path = "Target Support Files/Pods-mpfree/Pods-mpfree.release.xcconfig"; sourceTree = "<group>"; };
-		D021FF900F60AB01E2ED8AA6 /* Pods-mpfree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpfree.debug.xcconfig"; path = "Target Support Files/Pods-mpfree/Pods-mpfree.debug.xcconfig"; sourceTree = "<group>"; };
-		DEABC154F308447E747081E5 /* libPods-mpfree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mpfree.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDEECE93712E4B3B34EDF79B /* libPods-mpfree.a in Frameworks */,
+				4AC5D34025686C7800841536 /* Defaults in Frameworks */,
+				4AC5D33B25686C7000841536 /* Preferences in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,24 +104,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		081E12F738DF4483308E8482 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D021FF900F60AB01E2ED8AA6 /* Pods-mpfree.debug.xcconfig */,
-				81357C5FAA8E4B60B0C98E5A /* Pods-mpfree.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		4A2AF5C323889BC3000A7EB6 = {
 			isa = PBXGroup;
 			children = (
 				4A2AF5CE23889BC3000A7EB6 /* mpfree */,
-				4A2AF5E123889BC4000A7EB6 /* mpfreeTests */,
-				4A2AF5EC23889BC4000A7EB6 /* mpfreeUITests */,
 				4A2AF5CD23889BC3000A7EB6 /* Products */,
 				4AB94770239AB76700A5872A /* Frameworks */,
-				081E12F738DF4483308E8482 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,24 +134,6 @@
 				4A2AF5D923889BC4000A7EB6 /* mpfree.entitlements */,
 			);
 			path = mpfree;
-			sourceTree = "<group>";
-		};
-		4A2AF5E123889BC4000A7EB6 /* mpfreeTests */ = {
-			isa = PBXGroup;
-			children = (
-				4A2AF5E223889BC4000A7EB6 /* mpfreeTests.swift */,
-				4A2AF5E423889BC4000A7EB6 /* Info.plist */,
-			);
-			path = mpfreeTests;
-			sourceTree = "<group>";
-		};
-		4A2AF5EC23889BC4000A7EB6 /* mpfreeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4A2AF5ED23889BC4000A7EB6 /* mpfreeUITests.swift */,
-				4A2AF5EF23889BC4000A7EB6 /* Info.plist */,
-			);
-			path = mpfreeUITests;
 			sourceTree = "<group>";
 		};
 		4A4162F52430FDB100D85417 /* General */ = {
@@ -215,7 +178,6 @@
 		4AB94770239AB76700A5872A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DEABC154F308447E747081E5 /* libPods-mpfree.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -254,7 +216,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A2AF5F223889BC4000A7EB6 /* Build configuration list for PBXNativeTarget "mpfree" */;
 			buildPhases = (
-				241FE6EB09500C90DFD64743 /* [CP] Check Pods Manifest.lock */,
 				4A2AF5C823889BC3000A7EB6 /* Sources */,
 				4A2AF5C923889BC3000A7EB6 /* Frameworks */,
 				4A2AF5CA23889BC3000A7EB6 /* Resources */,
@@ -265,6 +226,10 @@
 			dependencies = (
 			);
 			name = mpfree;
+			packageProductDependencies = (
+				4AC5D33A25686C7000841536 /* Preferences */,
+				4AC5D33F25686C7800841536 /* Defaults */,
+			);
 			productName = mpfree;
 			productReference = 4A2AF5CC23889BC3000A7EB6 /* mpfree.app */;
 			productType = "com.apple.product-type.application";
@@ -312,7 +277,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Harry Clegg";
 				TargetAttributes = {
 					4A2AF5CB23889BC3000A7EB6 = {
@@ -337,6 +302,10 @@
 				Base,
 			);
 			mainGroup = 4A2AF5C323889BC3000A7EB6;
+			packageReferences = (
+				4AC5D33925686C7000841536 /* XCRemoteSwiftPackageReference "Preferences" */,
+				4AC5D33E25686C7800841536 /* XCRemoteSwiftPackageReference "Defaults" */,
+			);
 			productRefGroup = 4A2AF5CD23889BC3000A7EB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -376,31 +345,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		241FE6EB09500C90DFD64743 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mpfree-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		4A2AF5C823889BC3000A7EB6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -423,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A2AF5E323889BC4000A7EB6 /* mpfreeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +374,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A2AF5EE23889BC4000A7EB6 /* mpfreeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +430,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -548,6 +491,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -577,7 +521,6 @@
 		};
 		4A2AF5F323889BC4000A7EB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D021FF900F60AB01E2ED8AA6 /* Pods-mpfree.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mpfree/mpfree.entitlements;
@@ -600,7 +543,6 @@
 		};
 		4A2AF5F423889BC4000A7EB6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81357C5FAA8E4B60B0C98E5A /* Pods-mpfree.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mpfree/mpfree.entitlements;
@@ -741,6 +683,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4AC5D33925686C7000841536 /* XCRemoteSwiftPackageReference "Preferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Preferences";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+		4AC5D33E25686C7800841536 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4AC5D33A25686C7000841536 /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AC5D33925686C7000841536 /* XCRemoteSwiftPackageReference "Preferences" */;
+			productName = Preferences;
+		};
+		4AC5D33F25686C7800841536 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AC5D33E25686C7800841536 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A2AF5C423889BC3000A7EB6 /* Project object */;
 }

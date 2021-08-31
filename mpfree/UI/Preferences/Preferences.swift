@@ -15,8 +15,7 @@ extension Defaults.Keys {
     static let debugPrintTags = Key<Bool>("debugPrintTags", default: false)
 }
 
-extension PreferencePane.Identifier {
-    static let general = Identifier("general")
-    static let exporting = Identifier("exporting")
+extension Preferences.PaneIdentifier {
+    static let general = Self("general")
+    static let exporting = Self("exporting")
 }
-
