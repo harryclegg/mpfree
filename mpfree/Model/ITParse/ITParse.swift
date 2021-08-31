@@ -17,10 +17,16 @@ enum SelectionState: Int {
     case userSelected = 2
 }
 
+enum ExportSyntax: Int {
+    case playlistOrder = 0
+    case ratingOrder = 1
+}
+
 struct ItemMetadata {
     var title: String
     var artist: String
     var BPM: Int
+    var rating: Int
 }
 
 class ITParse {
@@ -50,6 +56,8 @@ class ITParse {
         
         // Remove distinguished kinds.
         playlists = playlists.filter({!$0.isMaster})
+        playlists = playlists.filter({$0.isVisible})
+        playlists = playlists.filter({!($0.items.count == 0)})
         playlists = playlists.filter({$0.distinguishedKind == ITLibDistinguishedPlaylistKind.kindNone})
         self.playlists = playlists
     }
@@ -127,17 +135,19 @@ class ITParse {
             }
             let playlistItems = playlist.asPlaylist.items
             
+            let exportMethod = playlist.isSmart ? ExportSyntax.ratingOrder : ExportSyntax.playlistOrder
+            
             var itemCount = 1
             
             for item in playlistItems {
-                self.exportItem(itemCount: itemCount, item: item, exportURL: destFolderURL)
+                self.exportItem(itemCount: itemCount, item: item, exportURL: destFolderURL, exportMethod: exportMethod)
                 itemCount += 1
             }
             
         }
     }
     
-    func exportItem(itemCount: Int, item: ITLibMediaItem, exportURL: URL) {
+    func exportItem(itemCount: Int, item: ITLibMediaItem, exportURL: URL, exportMethod: ExportSyntax) {
         // Export an iTunes media item to the desired export URL.
         
         // Get track metadata.
@@ -149,8 +159,18 @@ class ITParse {
         }
                 
         do {
+            
+            var fileName = String()
+            
             // Format output paths.
-            let fileName = String(format: "%02d - %@ - %@.%@", itemCount, metadata.title, metadata.artist, itemLocation.pathExtension)
+            switch exportMethod {
+            case .playlistOrder:
+                fileName = String(format: "%02d - %@ - %@.%@", itemCount, metadata.title, metadata.artist, itemLocation.pathExtension)
+            case .ratingOrder:
+                fileName = String(format: "%d* - %@ - %@.%@", metadata.rating, metadata.title, metadata.artist, itemLocation.pathExtension)
+            }
+            
+            
             let destPath = String(format: "%@/%@", exportURL.path, fileName)
             
             // Try and delete if file with same name already exists.
@@ -190,7 +210,7 @@ class ITParse {
         let artist = item.artist?.name ?? "UNKNOWN"
         
         // Grab the obvious ones directly.
-        return ItemMetadata(title: item.title, artist: artist, BPM: item.beatsPerMinute)
+        return ItemMetadata(title: item.title, artist: artist, BPM: item.beatsPerMinute, rating: item.rating / 20)
     }
     
 }

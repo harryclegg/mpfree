@@ -104,7 +104,7 @@ class ITParsePlaylistFolder: NSObject {
         }
     }
     
-    func getSelectionStatus() -> NSControl.StateValue {
+    var getSelectionStatus : NSControl.StateValue {
         var anyChildrenSelected = false
         var allChildrenSelected = true
         
@@ -112,7 +112,7 @@ class ITParsePlaylistFolder: NSObject {
         let endsWith = Defaults[.exportFilterSuffixString]
         
         for folder in self.folders {
-            if folder.getSelectionStatus() == .on {
+            if folder.getSelectionStatus == .on {
                 anyChildrenSelected = true
             } else {
                 allChildrenSelected = false
@@ -140,11 +140,30 @@ class ITParsePlaylistFolder: NSObject {
         
     }
     
+    var anyFilteredChildren : Bool {
+        
+        let startsWith = Defaults[.exportFilterPrefixString]
+        let endsWith = Defaults[.exportFilterSuffixString]
+        
+        for playlist in self.playlists {
+
+            if playlist.isSelected(startsWith: startsWith, endsWith: endsWith) {
+                return true
+            }
+        }
+        return false
+    }
+    
     func setSelection(_ newState: SelectionState) {
         // Pass new selection state down to child playlist folders and child playlists.
         self.folders.forEach { $0.setSelection(newState) }
         self.playlists.forEach { $0.setSelection(newState) }
     }
     
+    var totalItemCount : Int {
+        let playlistCount = self.playlists.map({$0.totalItemCount}).reduce(0, +)
+        let subFolderCount = self.folders.map({$0.totalItemCount}).reduce(0, +)
+        return playlistCount + subFolderCount
+    }
     
 }

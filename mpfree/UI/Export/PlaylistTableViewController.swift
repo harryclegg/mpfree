@@ -15,10 +15,9 @@ import Defaults
 /// and over again are error-prone. However, you need to make the Column Identifier in
 /// Interface Builder with the raw value used here.
 enum PlaylistTableViewColumn: String {
-    case isSelected = "isSelected"
-    case playlistName = "playlistName"
-    case trackCount = "trackCount"
-    case outputName = "outputName"
+    case playlist = "Playlist"
+    case trackCount = "TrackCount"
+    case outputPath = "OutputPath"
     
     init?(_ tableColumn: NSTableColumn) {
         self.init(rawValue: tableColumn.identifier.rawValue)
@@ -124,59 +123,55 @@ extension PlaylistTableViewController: NSOutlineViewDataSource, NSOutlineViewDel
         
         switch(column) {
             
-        case .playlistName:
-            switch(item) {
-            case let playlist as ITParsePlaylist:       text = String(playlist.name)
-            case let folder as ITParsePlaylistFolder:   text = String(folder.name)
-            default:                                    text = ""
-            }
-            
-            let view = outlineView.makeView(withIdentifier: .trackCount, owner: self) as? NSTableCellView
-            view?.textField?.stringValue = text
-            return view
-            
-        case .isSelected:
-            let cell = outlineView.makeView(withIdentifier: .playlist, owner: self) as! CheckboxCellView
+        case .playlist:
+            let view = outlineView.makeView(withIdentifier: column.cellIdentifier, owner: self) as! CheckboxCellView
             
             switch(item) {
                 
             case let playlist as ITParsePlaylist:
-                cell.checkboxButton.title = playlist.name
+                view.checkboxButton.title = playlist.name
                 if playlist.isSelected(startsWith: startsWith, endsWith: endsWith) {
-                    cell.checkboxButton.state = NSControl.StateValue.on
+                    view.checkboxButton.state = NSControl.StateValue.on
                 } else {
-                    cell.checkboxButton.state = NSControl.StateValue.off
+                    view.checkboxButton.state = NSControl.StateValue.off
                 }
-                cell.checkboxButton.allowsMixedState = false
+                view.checkboxButton.allowsMixedState = false
                 
             case let folder as ITParsePlaylistFolder:
-                cell.checkboxButton.title = folder.name
-                cell.checkboxButton.state = folder.getSelectionStatus()
-                cell.checkboxButton.allowsMixedState = true
+                view.checkboxButton.title = folder.name
+                view.checkboxButton.state = folder.getSelectionStatus
+                view.checkboxButton.allowsMixedState = folder.anyFilteredChildren
                 
             default: break
             }
             
             // Allows us to handle clicking on checkbox
-            cell.delegate = self
-            cell.item = item
-            return cell
-            
-        case .trackCount:
-            if let playlist = item as? ITParsePlaylist {
-                text = String(playlist.nTracks)
-            }
-            
-            let view = outlineView.makeView(withIdentifier: .trackCount, owner: self) as? NSTableCellView
-            view?.textField?.stringValue = text
+            view.delegate = self
+            view.item = item
             return view
             
-        case .outputName:
+        case .trackCount:
+            let view = outlineView.makeView(withIdentifier: column.cellIdentifier, owner: self) as? NSTableCellView
+            
+            switch(item) {
+                
+            case let playlist as ITParsePlaylist:
+                view?.textField?.stringValue = "\(playlist.totalItemCount)"
+
+            case let folder as ITParsePlaylistFolder:
+                view?.textField?.stringValue = "\(folder.totalItemCount)"
+
+            default: break
+            }
+            
+            return view
+            
+        case .outputPath:
             if let playlist = item as? ITParsePlaylist {
                 text = String(playlist.generateExportPath())
             }
             
-            let view = outlineView.makeView(withIdentifier: .outputName, owner: self) as? NSTableCellView
+            let view = outlineView.makeView(withIdentifier: column.cellIdentifier, owner: self) as? NSTableCellView
             view?.textField?.stringValue = text
             return view
         }
@@ -226,10 +221,4 @@ extension PlaylistTableViewController: CheckboxCellViewDelegate {
         default: return
         }
     }
-}
-
-extension NSUserInterfaceItemIdentifier {
-    static let playlist = NSUserInterfaceItemIdentifier(rawValue: "playlistCell")
-    static let trackCount = NSUserInterfaceItemIdentifier(rawValue: "trackCountCell")
-    static let outputName = NSUserInterfaceItemIdentifier(rawValue: "outputNameCell")
 }
